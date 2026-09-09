@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магистрын Хөтөлбөрүүд - Graduate Programs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Mongolian', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f0f0f0;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .card-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .info-tag {
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .view-details {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .view-details:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(0,0,0,0.8);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .modal-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-header-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 30px;
+            color: white;
+        }
+
+        .modal-header-overlay h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .modal-body {
+            padding: 40px;
+        }
+
+        .detail-section {
+            margin-bottom: 30px;
+        }
+
+        .detail-section h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .detail-item {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .detail-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .requirements-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #e53e3e;
+        }
+
+        .requirements-box h4 {
+            color: #c53030;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .requirements-box p {
+            color: #742a2a;
+            line-height: 1.6;
+        }
+
+        .note-box {
+            background: linear-gradient(135deg, #fffbea 0%, #fef3c7 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f59e0b;
+            margin-top: 20px;
+        }
+
+        .note-box p {
+            color: #92400e;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-body {
+                padding: 25px;
+            }
+
+            .modal-header {
+                height: 200px;
+            }
+
+            .modal-header-overlay h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 Магистрын Хөтөлбөрүүд</h1>
+            <p>Graduate Programs - 2026-2027</p>
+        </header>
+
+        <div class="programs-grid" id="programsGrid">
+            <!-- Cards will be generated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Modal for detailed view -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="">
+                <div class="modal-header-overlay">
+                    <h2 id="modalTitle"></h2>
+                </div>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const programs = [
+            {
+                number: 1,
+                name: "Бизнесийн удирдлага",
+                englishName: "BUSINESS MANAGEMENT",
+                credits: 39,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим, цахим",
+                schedule: "Бямба (08:00-18:30)<br>Ажлын өдрийн орой (18:40-21:30)",
+                requirements: "Эдийн засаг, бизнесийн удирдлагын бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: "Хэрвээ бизнесийн удирдлага, эдийн засгийн суурьгүй бол магистрын бэлтгэл хичээлд хамрагдана. Үүний дараа үндсэн хөтөлбөртөө суралцана.",
+                image: "BUSINESS MANAGEMENT.jpg"
+            },
+            {
+                number: 2,
+                name: "Санхүү, банк",
+                englishName: "FINANCIAL MANAGEMENT",
+                credits: 39,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим, цахим",
+                schedule: "Бямба (08:00-18:30)<br>Ажлын өдрийн орой (18:40-21:30)",
+                requirements: "Эдийн засаг, бизнесийн удирдлагын бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "FINANCIAL MANAGEMENT.jpg"
+            },
+            {
+                number: 3,
+                name: "Нягтлан бодох бүртгэл",
+                englishName: "ACCOUNTING",
+                credits: 39,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим, цахим",
+                schedule: "Бямба (08:00-18:30)<br>Ажлын өдрийн орой (18:40-21:30)",
+                requirements: "Нягтлан бодох, эдийн засаг, бизнесийн удирдлагын бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "ACCOUNTING.jpg"
+            },
+            {
+                number: 4,
+                name: "Хөрөнгө оруулалт",
+                englishName: "INVESTMENT MANAGEMENT",
+                credits: 40,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Эдийн засаг, бизнесийн удирдлагын бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "INVESTMENT MANAGEMENT.jpg"
+            },
+            {
+                number: 5,
+                name: "CFA бэлтгэл",
+                englishName: "FINANCIAL MANAGEMENT /CFA PREPARATION/",
+                credits: 42,
+                duration: "2 жил",
+                pricePerCredit: 384000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Санхүүгийн чиглэлээр бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "FINANCIAL MANAGEMENT CFA PREPARATION.jpg"
+            },
+            {
+                number: 6,
+                name: "Дата аналитикаар мэргэшүүлэх мэдээллийн систем",
+                englishName: "INFORMATION SYSTEMS",
+                credits: 39,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Мэдээллийн системийн менежментийн бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "INFORMATION SYSTEMS.jpg"
+            },
+            {
+                number: 7,
+                name: "Бизнесийн эрх зүй/Суурьтай/",
+                englishName: "BUSINESS AND LAW",
+                credits: 39,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Эрх зүйч, хуульч чиглэлээр бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "BUSINESS AND LAW.jpg"
+            },
+            {
+                number: 8,
+                name: "Бизнесийн эрх зүй/Суурьгүй/",
+                englishName: "BUSINESS MANAGEMENT /MANAGEMENT/",
+                credits: 45,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Санхүү, бизнесийн удирдлагын бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "BUSINESS MANAGEMENT MANAGEMENT.jpg"
+            },
+            {
+                number: 9,
+                name: "Төрийн удирдлага",
+                englishName: "PUBLIC ADMINISTRATION",
+                credits: 40,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Магадлан итгэмжлэгдсэн их, дээд сургуулиудыг бакалаврын зэрэгтэй төгссөн, 2.75-аас дээш байх",
+                note: null,
+                image: "PUBLIC ADMINISTRATION.jpg"
+            },
+            {
+                number: 10,
+                name: "Хүрээлэн буй орчны эдийн засаг",
+                englishName: "ENVIRONMENTAL ECONOMY",
+                credits: 36,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Магадлан итгэмжлэгдсэн их, дээд сургуулиудыг бакалаврын зэрэгтэй төгссөн, 2.75-аас дээш байх",
+                note: null,
+                image: "ENVIRONMENTAL ECONOMY.jpg"
+            },
+            {
+                number: 11,
+                name: "Удирдах ажилтны MBA",
+                englishName: "BUSINESS MANAGEMENT",
+                credits: 40,
+                duration: "1.5 жил",
+                pricePerCredit: 420000,
+                studyForm: "Танхим",
+                schedule: "Баасан (14:00-20:30)<br>Бямба (08:00-18:30)",
+                requirements: "Дээд түвшний удирдах албан тушаал эрхэлдэг, магадлан итгэмжлэгдсэн их, дээд сургуулийн бакалаврын зэрэгтэй, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "BUSINESS MANAGEMENT.jpg"
+            },
+            {
+                number: 12,
+                name: "Компанийн засаглал",
+                englishName: "CORPORATE GOVERNANCE",
+                credits: 40,
+                duration: "1.5 жил",
+                pricePerCredit: 420000,
+                studyForm: "Танхим, цахим",
+                schedule: "Бямба (08:00-18:30)<br>Ажлын өдрийн орой (18:40-21:30)",
+                requirements: "Магадлан итгэмжлэгдсэн их, дээд сургуулиудыг бакалаврын зэрэгтэй төгссөн, 2.75-аас дээш байх",
+                note: null,
+                image: "CORPORATE GOVERNANCE.jpg"
+            },
+            {
+                number: 13,
+                name: "Энтрепренершип ба инноваци",
+                englishName: "ENTREPRENEURSHIP AND INNOVATION",
+                credits: 52,
+                duration: "1.5 жил",
+                pricePerCredit: 420000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Магадлан итгэмжлэгдсэн их, дээд сургуулиудыг бакалаврын зэрэгтэй төгссөн, 2.75-аас дээш байх",
+                note: null,
+                image: "ENTREPRENEURSHIP AND INNOVATION.jpg"
+            },
+            {
+                number: 14,
+                name: "Ашгийн бус байгууллагын менежмент",
+                englishName: "NON-PROFIT MANAGEMENT",
+                credits: 39,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим, цахим",
+                schedule: "Бямба (08:00-18:30)<br>Ажлын өдрийн орой (18:40-21:30)",
+                requirements: "Магадлан итгэмжлэгдсэн их, дээд сургуулиудыг бакалаврын зэрэгтэй төгссөн, 2.75-аас дээш байх",
+                note: null,
+                image: "NON-PROFIT MANAGEMENT.jpg"
+            },
+            {
+                number: 15,
+                name: "Эрүүл мэндийн удирдах ажилтны MBA",
+                englishName: "BUSINESS MANAGEMENT",
+                credits: 40,
+                duration: "1.5 жил",
+                pricePerCredit: 420000,
+                studyForm: "Танхим",
+                schedule: "Баасан (14:00-20:30)<br>Бямба (08:00-18:30)",
+                requirements: "Эрүүл мэндийн салбарт ажилладаг, магадлан итгэмжлэгдсэн их, дээд сургуулиудыг бакалаврын зэрэгтэй төгссөн, голч дүн 2.75-аас дээш байх",
+                note: null,
+                image: "BUSINESS MANAGEMENT.jpg"
+            },
+            {
+                number: 16,
+                name: "Олон улсын худалдааны менежмент",
+                englishName: "BUSINESS MANAGEMENT",
+                credits: 40,
+                duration: "1.5 жил",
+                pricePerCredit: 342000,
+                studyForm: "Танхим",
+                schedule: "Бямба (08:00-18:30)",
+                requirements: "Магадлан итгэмжлэгдсэн их, дээд сургуулиудыг бакалаврын зэрэгтэй төгссөн, 2.75-аас дээш байх",
+                note: null,
+                image: "BUSINESS MANAGEMENT.jpg"
+            }
+        ];
+
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ₮";
+        }
+
+        function calculateTotalPrice(credits, pricePerCredit) {
+            return formatPrice(credits * pricePerCredit);
+        }
+
+        function renderCards() {
+            const grid = document.getElementById('programsGrid');
+            grid.innerHTML = '';
+
+            programs.forEach(program => {
+                const card = document.createElement('div');
+                card.className = 'program-card';
+                card.onclick = () => openModal(program);
+
+                card.innerHTML = `
+                    <img src="${program.image}" alt="${program.name}" class="card-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23f0f0f0%22 width=%22400%22 height=%22300%22/><text fill=%22%23999%22 font-family=%22Arial%22 font-size=%2220%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>${program.englishName}</text></svg>'">
+                    <div class="card-content">
+                        <div class="card-number">${program.number}</div>
+                        <h3 class="card-title">${program.name}</h3>
+                        <div class="card-info">
+                            <span class="info-tag">📚 ${program.credits} кредит</span>
+                            <span class="info-tag">⏱️ ${program.duration}</span>
+                            <span class="info-tag">💰 ${formatPrice(program.pricePerCredit)}/кр</span>
+                        </div>
+                        <button class="view-details">Дэлгэрэнгүй харах →</button>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function openModal(program) {
+            document.getElementById('modalImage').src = program.image;
+            document.getElementById('modalImage').onerror = function() {
+                this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300"><rect fill="%23f0f0f0" width="900" height="300"/><text fill="%23999" font-family="Arial" font-size="40" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">' + program.englishName + '</text></svg>';
+            };
+            document.getElementById('modalTitle').textContent = `${program.number}. ${program.name}`;
+            
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="detail-section">
+                    <h3>📋 Хөтөлбөрийн мэдээлэл</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Хөтөлбөрийн нэр</div>
+                            <div class="detail-value">${program.name}</div>
+                            <div style="color: #666; font-size: 0.9rem; margin-top: 5px;">${program.englishName}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Судлах кредит</div>
+                            <div class="detail-value">${program.credits} кредит</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Үргэлжлэх хугацаа</div>
+                            <div class="detail-value">${program.duration}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">1 кредитийн үнэлгээ</div>
+                            <div class="detail-value">${formatPrice(program.pricePerCredit)}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Нийт сургалтын төлбөр</div>
+                            <div class="detail-value">${calculateTotalPrice(program.credits, program.pricePerCredit)}</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Суралцах хэлбэр</div>
+                            <div class="detail-value">${program.studyForm}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>🕐 Хичээлийн цаг</h3>
+                    <div class="detail-item" style="background: #e8f4ff; border-left-color: #3498db;">
+                        <div class="detail-value">${program.schedule}</div>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h3>✅ Тавигдах шалгуур</h3>
+                    <div class="requirements-box">
+                        <p>${program.requirements}</p>
+                    </div>
+                </div>
+
+                ${program.note ? `
+                <div class="detail-section">
+                    <div class="note-box">
+                        <p>⚠️ <strong>Анхаарал:</strong> ${program.note}</p>
+                    </div>
+                </div>
+                ` : ''}
+            `;
+
+            document.getElementById('modalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Initialize
+        renderCards();
+    </script>
+</body>
+</html>
