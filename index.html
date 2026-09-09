@@ -2,137 +2,332 @@
 <html lang="mn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магистрын Хөтөлбөрүүд - Graduate Programs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Магистрын Хөтөлбөрүүд | UFE Graduate School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-navy: #1a365d;
+            --primary-dark: #0f2744;
+            --accent-gold: #c9a959;
+            --accent-gold-light: #d4b76e;
+            --text-dark: #1a202c;
+            --text-gray: #4a5568;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Noto Sans Mongolian', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Noto Sans Mongolian', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: var(--bg-light);
             min-height: 100vh;
-            padding: 20px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1400px;
+        /* Professional Header */
+        .site-header {
+            background: var(--primary-navy);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-gold);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .logo-text {
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--accent-gold-light);
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .year-badge {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+            padding: 40px 16px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a959' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        header {
-            text-align: center;
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             color: white;
-            padding: 40px 20px;
-            margin-bottom: 40px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
+            margin-bottom: 12px;
             font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        header p {
+        .hero p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .section-header h3 {
             font-size: 1.2rem;
-            opacity: 0.9;
+            color: var(--primary-navy);
+            font-weight: 600;
         }
 
+        .program-count {
+            background: var(--primary-navy);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Programs Grid - Mobile First */
         .programs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 20px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding-bottom: 40px;
         }
 
+        @media (min-width: 600px) {
+            .programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .programs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Program Card */
         .program-card {
-            background: white;
-            border-radius: 15px;
+            background: var(--bg-white);
+            border-radius: 12px;
             overflow: hidden;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
             position: relative;
         }
 
         .program-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+            border-color: var(--accent-gold);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: #f0f0f0;
         }
 
         .card-image {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
-            background: #f0f0f0;
+            transition: transform 0.3s ease;
         }
 
-        .card-content {
-            padding: 25px;
+        .program-card:hover .card-image {
+            transform: scale(1.05);
         }
 
-        .card-number {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        .card-number-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--primary-navy);
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-content {
+            padding: 20px;
         }
 
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
+            color: var(--text-dark);
+            margin-bottom: 14px;
             line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
-        .card-info {
+        .card-english-name {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+
+        .card-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
+            gap: 8px;
+            margin-bottom: 16px;
         }
 
-        .info-tag {
-            background: #f0f4ff;
-            color: #667eea;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            background: var(--bg-light);
+            padding: 6px 10px;
+            border-radius: 6px;
         }
 
-        .view-details {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 1rem;
+        .meta-icon {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+        }
+
+        .card-action {
+            width: 100%;
+            background: transparent;
+            color: var(--primary-navy);
+            border: 1px solid var(--primary-navy);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
-            width: 100%;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
-        .view-details:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        .card-action:hover {
+            background: var(--primary-navy);
+            color: white;
         }
 
-        /* Modal Styles */
+        /* Modal Styles - Mobile Optimized */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -140,12 +335,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.7);
             z-index: 1000;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
-            backdrop-filter: blur(5px);
+            align-items: flex-end;
+            padding: 0;
+        }
+
+        @media (min-width: 768px) {
+            .modal-overlay {
+                align-items: center;
+                padding: 20px;
+            }
         }
 
         .modal-overlay.active {
@@ -153,20 +354,27 @@
         }
 
         .modal-content {
-            background: white;
-            border-radius: 20px;
-            max-width: 900px;
+            background: var(--bg-white);
+            border-radius: 20px 20px 0 0;
             width: 100%;
-            max-height: 90vh;
+            max-width: 800px;
+            max-height: 92vh;
             overflow-y: auto;
             position: relative;
-            animation: modalSlideIn 0.3s ease;
+            animation: modalSlideUp 0.3s ease;
         }
 
-        @keyframes modalSlideIn {
+        @media (min-width: 768px) {
+            .modal-content {
+                border-radius: 20px;
+                max-height: 90vh;
+            }
+        }
+
+        @keyframes modalSlideUp {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(100%);
             }
             to {
                 opacity: 1;
@@ -175,10 +383,11 @@
         }
 
         .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0,0,0,0.5);
+            position: sticky;
+            top: 16px;
+            right: 16px;
+            float: right;
+            background: var(--primary-navy);
             color: white;
             border: none;
             width: 40px;
@@ -187,18 +396,27 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 10;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            margin: 16px 16px 0 0;
+            box-shadow: var(--shadow-md);
         }
 
         .modal-close:hover {
-            background: rgba(0,0,0,0.8);
-            transform: rotate(90deg);
+            background: var(--primary-dark);
+            transform: scale(1.1);
         }
 
         .modal-header {
             position: relative;
-            height: 300px;
+            height: 220px;
             overflow: hidden;
+            background: var(--primary-navy);
+        }
+
+        @media (min-width: 768px) {
+            .modal-header {
+                height: 280px;
+            }
         }
 
         .modal-header img {
@@ -212,133 +430,261 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            padding: 30px;
-            color: white;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            padding: 60px 20px 20px;
+        }
+
+        .modal-program-number {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
         .modal-header-overlay h2 {
-            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            color: white;
+            margin-bottom: 6px;
+        }
+
+        .modal-english-name {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .modal-body {
-            padding: 40px;
+            padding: 24px 20px 40px;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body {
+                padding: 32px 40px 40px;
+            }
         }
 
         .detail-section {
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .detail-section h3 {
-            color: #667eea;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f4ff;
+            color: var(--primary-navy);
+            font-size: 1.05rem;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .detail-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 600px) {
+            .detail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .detail-item {
-            background: #f8f9ff;
-            padding: 20px;
+            background: var(--bg-light);
+            padding: 16px;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-left: 3px solid var(--primary-navy);
         }
 
         .detail-label {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-bottom: 6px;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .detail-value {
-            color: #333;
-            font-size: 1.1rem;
+            color: var(--text-dark);
+            font-size: 1rem;
             font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .detail-value.small {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-gray);
+        }
+
+        .schedule-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 3px solid var(--primary-navy);
+        }
+
+        .schedule-box p {
+            color: var(--primary-dark);
+            line-height: 1.8;
+            font-weight: 500;
         }
 
         .requirements-box {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-            padding: 25px;
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+            padding: 18px;
             border-radius: 10px;
-            border-left: 4px solid #e53e3e;
-        }
-
-        .requirements-box h4 {
-            color: #c53030;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            border-left: 3px solid #e53e3e;
         }
 
         .requirements-box p {
             color: #742a2a;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         .note-box {
-            background: linear-gradient(135deg, #fffbea 0%, #fef3c7 100%);
-            padding: 20px;
+            background: linear-gradient(135deg, #fffff0 0%, #fefcbf 100%);
+            padding: 18px;
             border-radius: 10px;
-            border-left: 4px solid #f59e0b;
-            margin-top: 20px;
+            border-left: 3px solid var(--accent-gold);
         }
 
         .note-box p {
-            color: #92400e;
-            line-height: 1.6;
+            color: #744210;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
+        .price-highlight {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+            color: white !important;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: none;
+            grid-column: 1 / -1;
+        }
 
-            .programs-grid {
-                grid-template-columns: 1fr;
-            }
+        .price-highlight .detail-label {
+            color: var(--accent-gold-light);
+        }
 
-            .modal-body {
-                padding: 25px;
-            }
+        .price-highlight .detail-value {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
 
-            .modal-header {
-                height: 200px;
-            }
+        /* Footer */
+        .site-footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 16px;
+            margin-top: 40px;
+        }
 
-            .modal-header-overlay h2 {
-                font-size: 1.5rem;
-            }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .footer-text {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .contact-info a {
+            color: var(--accent-gold-light);
+            text-decoration: none;
+        }
+
+        /* Utility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🎓 Магистрын Хөтөлбөрүүд</h1>
-            <p>UFE Graduate School - 2026-2027</p>
-        </header>
+    <!-- Professional Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">🎓</div>
+                <div class="logo-text">
+                    <h1>UFE Graduate School</h1>
+                    <p>Магистрын Сургууль</p>
+                </div>
+            </div>
+            <div class="year-badge">2026-2027</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Магистрын Хөтөлбөрүүд</h2>
+            <p>Удирдлагын Академийн Дээд Зэргийн Боловсрол - Таны Ирээдүйг Эндээс Эхлүүлнэ</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="section-header">
+            <h3>Бүх Хөтөлбөрүүд</h3>
+            <span class="program-count" id="programCount">0 хөтөлбөр</span>
+        </div>
 
         <div class="programs-grid" id="programsGrid">
             <!-- Cards will be generated by JavaScript -->
         </div>
-    </div>
+    </main>
 
     <!-- Modal for detailed view -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <button class="modal-close" onclick="closeModal()" aria-label="Хаах">&times;</button>
             <div class="modal-header">
                 <img id="modalImage" src="" alt="">
                 <div class="modal-header-overlay">
+                    <span class="modal-program-number" id="modalNumber"></span>
                     <h2 id="modalTitle"></h2>
+                    <p class="modal-english-name" id="modalEnglishName"></p>
                 </div>
             </div>
             <div class="modal-body" id="modalBody">
@@ -346,6 +692,19 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">UFE Graduate School</div>
+            <p class="footer-text">Удирдлага Санхүүгийн Сургуулийн Магистрын Сургууль</p>
+            <div class="contact-info">
+                <span>📍 Улаанбаатар, Монгол</span>
+                <span>📞 +976-11-000000</span>
+                <a href="mailto:info@ufe.edu.mn">✉️ info@ufe.edu.mn</a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const programs = [
@@ -569,7 +928,9 @@
 
         function renderCards() {
             const grid = document.getElementById('programsGrid');
+            const countEl = document.getElementById('programCount');
             grid.innerHTML = '';
+            countEl.textContent = `${programs.length} хөтөлбөр`;
 
             programs.forEach(program => {
                 const card = document.createElement('div');
@@ -577,16 +938,19 @@
                 card.onclick = () => openModal(program);
 
                 card.innerHTML = `
-                    <img src="${program.image}" alt="${program.name}" class="card-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23f0f0f0%22 width=%22400%22 height=%22300%22/><text fill=%22%23999%22 font-family=%22Arial%22 font-size=%2220%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>${program.englishName}</text></svg>'">
+                    <div class="card-image-wrapper">
+                        <span class="card-number-badge">${program.number}</span>
+                        <img src="${program.image}" alt="${program.name}" class="card-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23f0f0f0%22 width=%22400%22 height=%22300%22/><text fill=%22%23999%22 font-family=%22Arial%22 font-size=%2220%22 x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22>${program.englishName}</text></svg>'">
+                    </div>
                     <div class="card-content">
-                        <div class="card-number">${program.number}</div>
+                        <p class="card-english-name">${program.englishName}</p>
                         <h3 class="card-title">${program.name}</h3>
-                        <div class="card-info">
-                            <span class="info-tag">📚 ${program.credits} кредит</span>
-                            <span class="info-tag">⏱️ ${program.duration}</span>
-                            <span class="info-tag">💰 ${formatPrice(program.pricePerCredit)}/кр</span>
+                        <div class="card-meta">
+                            <span class="meta-item"><span class="meta-icon">📚</span> ${program.credits} кредит</span>
+                            <span class="meta-item"><span class="meta-icon">⏱️</span> ${program.duration}</span>
+                            <span class="meta-item"><span class="meta-icon">💰</span> ${formatPrice(program.pricePerCredit)}/кр</span>
                         </div>
-                        <button class="view-details">Дэлгэрэнгүй харах →</button>
+                        <button class="card-action">Дэлгэрэнгүй <span>→</span></button>
                     </div>
                 `;
 
@@ -599,18 +963,14 @@
             document.getElementById('modalImage').onerror = function() {
                 this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300"><rect fill="%23f0f0f0" width="900" height="300"/><text fill="%23999" font-family="Arial" font-size="40" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">' + program.englishName + '</text></svg>';
             };
-            document.getElementById('modalTitle').textContent = `${program.number}. ${program.name}`;
-            
+            document.getElementById('modalNumber').textContent = `#${program.number}`;
+            document.getElementById('modalTitle').textContent = program.name;
+            document.getElementById('modalEnglishName').textContent = program.englishName;
             const modalBody = document.getElementById('modalBody');
             modalBody.innerHTML = `
                 <div class="detail-section">
                     <h3>📋 Хөтөлбөрийн мэдээлэл</h3>
                     <div class="detail-grid">
-                        <div class="detail-item">
-                            <div class="detail-label">Хөтөлбөрийн нэр</div>
-                            <div class="detail-value">${program.name}</div>
-                            <div style="color: #666; font-size: 0.9rem; margin-top: 5px;">${program.englishName}</div>
-                        </div>
                         <div class="detail-item">
                             <div class="detail-label">Судлах кредит</div>
                             <div class="detail-value">${program.credits} кредит</div>
@@ -620,29 +980,29 @@
                             <div class="detail-value">${program.duration}</div>
                         </div>
                         <div class="detail-item">
-                            <div class="detail-label">1 кредитийн үнэлгээ</div>
+                            <div class="detail-label">1 кредитийн үнэ</div>
                             <div class="detail-value">${formatPrice(program.pricePerCredit)}</div>
-                        </div>
-                        <div class="detail-item">
-                            <div class="detail-label">Нийт сургалтын төлбөр</div>
-                            <div class="detail-value">${calculateTotalPrice(program.credits, program.pricePerCredit)}</div>
                         </div>
                         <div class="detail-item">
                             <div class="detail-label">Суралцах хэлбэр</div>
                             <div class="detail-value">${program.studyForm}</div>
+                        </div>
+                        <div class="detail-item price-highlight">
+                            <div class="detail-label">Нийт сургалтын төлбөр</div>
+                            <div class="detail-value">${calculateTotalPrice(program.credits, program.pricePerCredit)}</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="detail-section">
                     <h3>🕐 Хичээлийн цаг</h3>
-                    <div class="detail-item" style="background: #e8f4ff; border-left-color: #3498db;">
-                        <div class="detail-value">${program.schedule}</div>
+                    <div class="schedule-box">
+                        <p>${program.schedule}</p>
                     </div>
                 </div>
 
                 <div class="detail-section">
-                    <h3>✅ Тавигдах шалгуур</h3>
+                    <h3>✅ Элсэлтийн шаардлага</h3>
                     <div class="requirements-box">
                         <p>${program.requirements}</p>
                     </div>
