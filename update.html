@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-card h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-details {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-details:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 2rem;
+            color: #667eea;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #764ba2;
+        }
+
+        .modal-title {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        .modal-text {
+            color: #333;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .modal-text ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .modal-text li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .modal-text ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .modal-text ol li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .email-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .email-section a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .email-section a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                padding: 25px;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="Logo.png" alt="Logo" class="logo">
+            <h1>НОМ ДӨЛ ХХК-ийн дэргэдэх</h1>
+            <h2>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</h2>
+        </header>
+
+        <div class="sections-grid">
+            <div class="section-card" onclick="openModal('uria')">
+                <h3>УРИА</h3>
+                <p>Хүссэн мэргэжлээ эзэмшээд хүрэх ирээдүйгээ бүтээ.</p>
+                <button class="btn-details">Дэлгэрэнгүй</button>
+            </div>
+
+            <div class="section-card" onclick="openModal('erhem_zorilgo')">
+                <h3>ЭРХЭМ ЗОРИЛГО</h3>
+                <p>Практикт суурилсан чанартай сургалтаар мэргэжлийн өндөр ур чадварыг эзэмшүүлж, өрсөлдөх чадамжтай, хөгжих эрмэлзэлтэй "ЧАДВАРЛАГ АЖИЛТАН"-ыг бид бэлтгэнэ.</p>
+                <button class="btn-details">Дэлгэрэнгүй</button>
+            </div>
+
+            <div class="section-card" onclick="openModal('alsyn_haraa')">
+                <h3>АЛСЫН ХАРАА</h3>
+                <p>Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвар, шинэчлэлээр тэргүүлж, олон улсад хүлээн зөвшөөрөгдөх сургалтын зорилго, зорилтот орчныг бүрдүүлж, ажил олгогч болон төгсөгч нартай эргэх холбоотой ажиллагч "МЭРГЭЖЛИЙН СУРГАЛТЫН ЖИШИГ ТӨВ" болох.</p>
+                <button class="btn-details">Дэлгэрэнгүй</button>
+            </div>
+
+            <div class="section-card" onclick="openModal('unet_zuil')">
+                <h3>ҮНЭТ ЗҮЙЛ</h3>
+                <p>Чанар, Мэргэжлийн ур чадвар, Хариуцлага, Хөгжил, Хүндлэл, Үр дүн</p>
+                <button class="btn-details">Дэлгэрэнгүй</button>
+            </div>
+
+            <div class="section-card" onclick="openModal('zorilgo')">
+                <h3>ЗОРИЛГО</h3>
+                <p>Мэргэжил эзэмшихийг хүсэгч хэн бүхэнд практикт суурилсан чанартай сургалтаар чадамж эзэмшүүлж, ажил олгогчдын хүлээлтэд нийцсэн чадварлаг ажилтныг бэлтгэн гаргах.</p>
+                <button class="btn-details">Дэлгэрэнгүй</button>
+            </div>
+
+            <div class="section-card" onclick="openModal('zorilt')">
+                <h3>ЗОРИЛТ</h3>
+                <p>Сургалтын чанарыг сайжруулах, онол практик хослох, цаг үеийн өөрчлөлтийг нэвтрүүлэх, багш хамт олноо хөгжүүлэх зэрэг 9 үндсэн зорилт.</p>
+                <button class="btn-details">Дэлгэрэнгүй</button>
+            </div>
+
+            <div class="section-card" onclick="openModal('surgaltiin_zarchim')">
+                <h3>СУРГАЛТЫН ЗАРЧИМ</h3>
+                <p>"Шавь төвт сургалт" - Онол → Дадлага → Бие даалт → Мэргэжлийн ур чадвар → Аюулгүй ажиллагаа</p>
+                <button class="btn-details">Дэлгэрэнгүй</button>
+            </div>
+
+            <div class="section-card" onclick="openModal('bodlogo')">
+                <h3>БОДЛОГО</h3>
+                <p>Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн үзэж, хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн чанартай сургалтыг мэргэжлийн өндөр түвшинд явуулж, багш бүр мэргэжлийн болон заах арга, ур чадварыг тогтмол хөгжүүлж, төгсөгчдийг эзэмшсэн мэргэжлээрээ ажиллах, бизнес эрхлэх бодит чадвартай болгох.</p>
+                <button class="btn-details">Дэлгэрэнгүй</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="uria-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('uria')">&times;</span>
+            <h2 class="modal-title">УРИА</h2>
+            <div class="modal-text">
+                <p>"Хүссэн мэргэжлээ эзэмшээд хүрэх ирээдүйгээ бүтээ."</p>
+            </div>
+            <div class="email-section">
+                <p>Холбоо барих:</p>
+                <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="erhem_zorilgo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('erhem_zorilgo')">&times;</span>
+            <h2 class="modal-title">ЭРХЭМ ЗОРИЛГО</h2>
+            <div class="modal-text">
+                <p>Практикт суурилсан чанартай сургалтаар мэргэжлийн өндөр ур чадварыг эзэмшүүлж, өрсөлдөх чадамжтай, хөгжих эрмэлзэлтэй "ЧАДВАРЛАГ АЖИЛТАН"-ыг бид бэлтгэнэ.</p>
+            </div>
+            <div class="email-section">
+                <p>Холбоо барих:</p>
+                <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="alsyn_haraa-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('alsyn_haraa')">&times;</span>
+            <h2 class="modal-title">АЛСЫН ХАРАА</h2>
+            <div class="modal-text">
+                <p>Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвар, шинэчлэлээр тэргүүлж, олон улсад хүлээн зөвшөөрөгдөх сургалтын зорилго, зорилтот орчныг бүрдүүлж, ажил олгогч болон төгсөгч нартай эргэх холбоотой ажиллагч "МЭРГЭЖЛИЙН СУРГАЛТЫН ЖИШИГ ТӨВ" болох.</p>
+            </div>
+            <div class="email-section">
+                <p>Холбоо барих:</p>
+                <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="unet_zuil-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('unet_zuil')">&times;</span>
+            <h2 class="modal-title">ҮНЭТ ЗҮЙЛ</h2>
+            <div class="modal-text">
+                <ul>
+                    <li><strong>Чанар</strong> – Сургалтын чанарыг нэн тэргүүнд эрхэмлэгч</li>
+                    <li><strong>Мэргэжлийн ур чадвар</strong> – Бодит мэдлэг, дадлага, ур чадварыг эзэмшүүлэгч</li>
+                    <li><strong>Хариуцлага</strong> – Төгсөгч бүр ажлын хариуцлагатай, мэргэшсэн ажилтан болох</li>
+                    <li><strong>Хөгжил</strong> – Шинэ мэдлэг, техник, технологи, арга барилаар хамтдаа хөгжигч</li>
+                    <li><strong>Хүндлэл</strong> – Суралцагч, багш, ажилтан бүр харилцан хүндлэлцэх, зөв соёлыг түгээгч</li>
+                    <li><strong>Үр дүн</strong> – Төгсөгч бүрийн амжилттай хөдөлмөр эрхлэлт, сэтгэл ханамж, ахиж дэвших боломж</li>
+                </ul>
+            </div>
+            <div class="email-section">
+                <p>Холбоо барих:</p>
+                <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="zorilgo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('zorilgo')">&times;</span>
+            <h2 class="modal-title">ЗОРИЛГО</h2>
+            <div class="modal-text">
+                <p>Мэргэжил эзэмшихийг хүсэгч хэн бүхэнд практикт суурилсан чанартай сургалтаар чадамж эзэмшүүлж, ажил олгогчдын хүлээлтэд нийцсэн чадварлаг ажилтныг бэлтгэн гаргах.</p>
+            </div>
+            <div class="email-section">
+                <p>Холбоо барих:</p>
+                <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="zorilt-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('zorilt')">&times;</span>
+            <h2 class="modal-title">ЗОРИЛТ</h2>
+            <div class="modal-text">
+                <ol>
+                    <li>Сургалтын чанарыг тасралтгүй сайжруулах</li>
+                    <li>Онол, практикийг хослуулсан сургалтыг хөгжүүлэх</li>
+                    <li>Цаг үе, өөрчлөлтийг мэдэрч онол, практикийн шинэчлэлийг сургалтын агуулгад нэвтрүүлэх</li>
+                    <li>Мэргэжлийн ур чадвартай багш, хамт олныг бий болгох, тогтвортой ажиллуулах</li>
+                    <li>Байгууллагаараа хамтдаа хөгжих, багаар ажиллах, бүтээмжээ нэмэгдүүлэх</li>
+                    <li>Сургах арга зүйг сайжруулах, суралцагч бүрийн онцлогийг мэдэрч ажиллах</li>
+                    <li>Хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн мэргэжлээр чадварлаг ажилтан бэлтгэх</li>
+                    <li>Төгсөгчдийг хувиараа хөдөлмөр эрхлэх, ажил олоход нь зөвлөгөө, чиглүүлэг өгөх</li>
+                    <li>Олон улсын стандарт, шаардлагад нийцсэн онол, ур чадварыг сургалтын хөтөлбөрт нэвтрүүлэх</li>
+                </ol>
+            </div>
+            <div class="email-section">
+                <p>Холбоо барих:</p>
+                <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="surgaltiin_zarchim-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('surgaltiin_zarchim')">&times;</span>
+            <h2 class="modal-title">СУРГАЛТЫН ЗАРЧИМ</h2>
+            <div class="modal-text">
+                <p><strong>"Шавь төвт сургалт"</strong></p>
+                <br>
+                <p>"Онол → Дадлага → Бие даалт → Мэргэжлийн ур чадвар → Аюулгүй ажиллагаа" гэсэн дарааллаар бодит чадвар эзэмшүүлэх.</p>
+            </div>
+            <div class="email-section">
+                <p>Холбоо барих:</p>
+                <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="bodlogo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('bodlogo')">&times;</span>
+            <h2 class="modal-title">БОДЛОГО</h2>
+            <div class="modal-text">
+                <p>Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн үзэж, хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн чанартай сургалтыг мэргэжлийн өндөр түвшинд явуулж, багш бүр мэргэжлийн болон заах арга, ур чадварыг тогтмол хөгжүүлж, төгсөгчдийг эзэмшсэн мэргэжлээрээ ажиллах, бизнес эрхлэх бодит чадвартай болгох.</p>
+            </div>
+            <div class="email-section">
+                <p>Холбоо барих:</p>
+                <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(sectionId) {
+            document.getElementById(sectionId + '-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(sectionId) {
+            document.getElementById(sectionId + '-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
