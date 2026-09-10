@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ | НОМ ДӨЛ ХХК</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #1a365d;
+            --primary-dark: #0f2744;
+            --accent-gold: #c9a959;
+            --accent-gold-light: #d4b76e;
+            --text-dark: #1a202c;
+            --text-gray: #4a5568;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', 'Noto Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-light);
+            min-height: 100vh;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Professional Header */
+        .site-header {
+            background: var(--primary-navy);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-image {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            background: white;
+            border-radius: 12px;
+            padding: 4px;
+        }
+
+        .logo-text {
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            color: var(--accent-gold-light);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+            padding: 50px 16px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a959' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-family: 'Arial', sans-serif;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Sections Grid */
+        .sections-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 40px 0;
+        }
+
+        @media (min-width: 768px) {
+            .sections-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Section Card */
+        .section-card {
+            background: var(--bg-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .section-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-header h3 {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .card-content {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .card-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card-content li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .card-content li::before {
+            content: '•';
+            color: var(--accent-gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .card-content ol {
+            padding-left: 20px;
+        }
+
+        .card-content ol li {
+            padding: 6px 0;
+            padding-left: 8px;
+            position: relative;
+        }
+
+        .card-content ol li::before {
+            content: none;
+        }
+
+        .email-footer {
+            background: var(--bg-light);
+            padding: 12px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .email-footer a {
+            color: var(--primary-navy);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .email-footer a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0;
+        }
+
+        @media (min-width: 768px) {
+            .modal-overlay {
+                align-items: center;
+                padding: 20px;
+            }
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-white);
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            max-width: 800px;
+            max-height: 92vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideUp 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .modal-content {
+                border-radius: 20px;
+                max-height: 90vh;
+            }
+        }
+
+        @keyframes modalSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: sticky;
+            top: 16px;
+            right: 16px;
+            float: right;
+            background: var(--primary-navy);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s ease;
+            margin: 16px 16px 0 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .modal-close:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .modal-header {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .modal-header h2 {
+            font-family: 'Arial', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .modal-body {
+            padding: 24px 20px 40px;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body {
+                padding: 32px 40px 40px;
+            }
+        }
+
+        .detail-section {
+            margin-bottom: 28px;
+        }
+
+        .detail-section h3 {
+            color: var(--primary-navy);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .detail-content {
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .detail-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detail-content li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .detail-content li::before {
+            content: '•';
+            color: var(--accent-gold);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+        }
+
+        .detail-content ol {
+            padding-left: 20px;
+        }
+
+        .detail-content ol li {
+            padding: 8px 0;
+            padding-left: 8px;
+            position: relative;
+        }
+
+        .detail-content ol li::before {
+            content: none;
+        }
+
+        .principle-flow {
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .flow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .flow-step {
+            background: var(--primary-navy);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .flow-arrow {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .modal-email {
+            background: var(--bg-light);
+            padding: 16px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-email a {
+            color: var(--primary-navy);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .modal-email a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--primary-navy);
+            color: white;
+            padding: 30px 16px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 12px;
+        }
+
+        .footer-email {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-email a {
+            color: var(--accent-gold-light);
+            text-decoration: none;
+        }
+
+        .footer-email a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="qr.png" alt="UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ Logo" class="logo-image">
+                <div class="logo-text">
+                    <h1>UPDATE МЭРГЭЖИЛ<br>СУРГАЛТЫН ТӨВ</h1>
+                    <p>НОМ ДӨЛ ХХК-ийн дэргэдэх</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</h2>
+            <p>"Хүссэн мэргэжлээ эзэмшээд хүрэх ирээдүйгээ бүтээ."</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="sections-grid">
+            <!-- УРИА -->
+            <div class="section-card" onclick="openModal('modal-uria')">
+                <div class="card-header">
+                    <h3>📣 УРИА</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-content">"Хүссэн мэргэжлээ эзэмшээд хүрэх ирээдүйгээ бүтээ."</p>
+                </div>
+                <div class="email-footer">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+
+            <!-- ЭРХЭМ ЗОРИЛГО -->
+            <div class="section-card" onclick="openModal('modal-erkhem')">
+                <div class="card-header">
+                    <h3>🎯 ЭРХЭМ ЗОРИЛГО</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-content">Практикт суурилсан чанартай сургалтаар мэргэжлийн өндөр ур чадварыг эзэмшүүлж, өрсөлдөх чадамжтай, хөгжих эрмэлзэлтэй <strong>"ЧАДВАРЛАГ АЖИЛТАН"</strong>-ыг бид бэлтгэнэ.</p>
+                </div>
+                <div class="email-footer">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+
+            <!-- АЛСЫН ХАРАА -->
+            <div class="section-card" onclick="openModal('modal-alsyn')">
+                <div class="card-header">
+                    <h3>🔭 АЛСЫН ХАРАА</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-content">Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвар, шинэчлэлээр тэргүүлж, олон улсад хүлээн зөвшөөрөгдөх сургалтын зорилго, зорилтот орчныг бүрдүүлж, ажил олгогч болон төгсөгч нартай эргэх холбоотой ажиллагч <strong>"МЭРГЭЖЛИЙН СУРГАЛТЫН ЖИШИГ ТӨВ"</strong> болох.</p>
+                </div>
+                <div class="email-footer">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+
+            <!-- ҮНЭТ ЗҮЙЛ -->
+            <div class="section-card" onclick="openModal('modal-unet')">
+                <div class="card-header">
+                    <h3>💎 ҮНЭТ ЗҮЙЛ</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="card-content">
+                        <li><strong>Чанар</strong> – Сургалтын чанарыг нэн тэргүүнд эрхэмлэгч</li>
+                        <li><strong>Мэргэжлийн ур чадвар</strong> – Бодит мэдлэг, дадлага, ур чадварыг эзэмшүүлэгч</li>
+                        <li><strong>Хариуцлага</strong> – Төгсөгч бүр ажлын хариуцлагатай, мэргэшсэн ажилтан болох</li>
+                        <li><strong>Хөгжил</strong> – Шинэ мэдлэг, техник, технологи, арга барилаар хамтдаа хөгжигч</li>
+                        <li><strong>Хүндлэл</strong> – Суралцагч, багш, ажилтан бүр харилцан хүндлэлцэх, зөв соёлыг түгээгч</li>
+                        <li><strong>Үр дүн</strong> – Төгсөгч бүрийн амжилттай хөдөлмөр эрхлэлт, сэтгэл ханамж, ахиж дэвших боломж</li>
+                    </ul>
+                </div>
+                <div class="email-footer">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+
+            <!-- ЗОРИЛГО -->
+            <div class="section-card" onclick="openModal('modal-zorigo')">
+                <div class="card-header">
+                    <h3>🎯 ЗОРИЛГО</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-content">Мэргэжил эзэмшихийг хүсэгч хэн бүхэнд практикт суурилсан чанартай сургалтаар чадамж эзэмшүүлж, ажил олгогчдын хүлээлтэд нийцсэн чадварлаг ажилтныг бэлтгэн гаргах.</p>
+                </div>
+                <div class="email-footer">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+
+            <!-- ЗОРИЛТ -->
+            <div class="section-card" onclick="openModal('modal-zorilt')">
+                <div class="card-header">
+                    <h3>📋 ЗОРИЛТ</h3>
+                </div>
+                <div class="card-body">
+                    <ol class="card-content">
+                        <li>Сургалтын чанарыг тасралтгүй сайжруулах</li>
+                        <li>Онол, практикийг хослуулсан сургалтыг хөгжүүлэх</li>
+                        <li>Цаг үе, өөрчлөлтийг мэдэрч онол, практикийн шинэчлэлийг сургалтын агуулгад нэвтрүүлэх</li>
+                        <li>Мэргэжлийн ур чадвартай багш, хамт олныг бий болгох, тогтвортой ажиллуулах</li>
+                        <li>Байгууллагаараа хамтдаа хөгжих, багаар ажиллах, бүтээмжээ нэмэгдүүлэх</li>
+                        <li>Сургах арга зүйг сайжруулах, суралцагч бүрийн онцлогийг мэдэрч ажиллах</li>
+                        <li>Хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн мэргэжлээр чадварлаг ажилтан бэлтгэх</li>
+                        <li>Төгсөгчдийг хувиараа хөдөлмөр эрхлэх, ажил олоход нь зөвлөгөө, чиглүүлэг өгөх</li>
+                        <li>Олон улсын стандарт, шаардлагад нийцсэн онол, ур чадварыг сургалтын хөтөлбөрт нэвтрүүлэх</li>
+                    </ol>
+                </div>
+                <div class="email-footer">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+
+            <!-- СУРГАЛТЫН ЗАРЧИМ -->
+            <div class="section-card" onclick="openModal('modal-zarchim')">
+                <div class="card-header">
+                    <h3>⚙️ СУРГАЛТЫН ЗАРЧИМ</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-content"><strong>"Шавь төвт сургалт"</strong></p>
+                    <div class="principle-flow">
+                        <p><strong>"Онол → Дадлага → Бие даалт → Мэргэжлийн ур чадвар → Аюулгүй ажиллагаа"</strong></p>
+                        <p style="margin-top: 12px; font-size: 0.9rem;">гэсэн дарааллаар бодит чадвар эзэмшүүлэх.</p>
+                    </div>
+                </div>
+                <div class="email-footer">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+
+            <!-- БОДЛОГО -->
+            <div class="section-card" onclick="openModal('modal-bodlogo')">
+                <div class="card-header">
+                    <h3>📜 БОДЛОГО</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-content">Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн үзэж, хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн чанартай сургалтыг мэргэжлийн өндөр түвшинд явуулж, багш бүр мэргэжлийн болон заах арга, ур чадварыг тогтмол хөгжүүлж, төгсөгчдийг эзэмшсэн мэргэжлээрээ ажиллах, бизнес эрхлэх бодит чадвартай болгох.</p>
+                </div>
+                <div class="email-footer">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p><strong>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</strong></p>
+            <p>НОМ ДӨЛ ХХК-ийн дэргэдэх</p>
+            <p class="footer-email">📧 <a href="mailto:Update.surgalt@gmail.com">Update.surgalt@gmail</a></p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- УРИА Modal -->
+    <div class="modal-overlay" id="modal-uria">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-uria')">&times;</button>
+            <div class="modal-header">
+                <h2>📣 УРИА</h2>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Манай уриа</h3>
+                    <p class="detail-content" style="font-size: 1.2rem; font-weight: 600; text-align: center; padding: 20px;">"Хүссэн мэргэжлээ эзэмшээд хүрэх ирээдүйгээ бүтээ."</p>
+                </div>
+                <div class="modal-email">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЭРХЭМ ЗОРИЛГО Modal -->
+    <div class="modal-overlay" id="modal-erkhem">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-erkhem')">&times;</button>
+            <div class="modal-header">
+                <h2>🎯 ЭРХЭМ ЗОРИЛГО</h2>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Бидний эрхэм зорилго</h3>
+                    <p class="detail-content">Практикт суурилсан чанартай сургалтаар мэргэжлийн өндөр ур чадварыг эзэмшүүлж, өрсөлдөх чадамжтай, хөгжих эрмэлзэлтэй <strong>"ЧАДВАРЛАГ АЖИЛТАН"</strong>-ыг бид бэлтгэнэ.</p>
+                </div>
+                <div class="modal-email">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- АЛСЫН ХАРАА Modal -->
+    <div class="modal-overlay" id="modal-alsyn">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-alsyn')">&times;</button>
+            <div class="modal-header">
+                <h2>🔭 АЛСЫН ХАРАА</h2>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Бидний алсын хараа</h3>
+                    <p class="detail-content">Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвар, шинэчлэлээр тэргүүлж, олон улсад хүлээн зөвшөөрөгдөх сургалтын зорилго, зорилтот орчныг бүрдүүлж, ажил олгогч болон төгсөгч нартай эргэх холбоотой ажиллагч <strong>"МЭРГЭЖЛИЙН СУРГАЛТЫН ЖИШИГ ТӨВ"</strong> болох.</p>
+                </div>
+                <div class="modal-email">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ҮНЭТ ЗҮЙЛ Modal -->
+    <div class="modal-overlay" id="modal-unet">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-unet')">&times;</button>
+            <div class="modal-header">
+                <h2>💎 ҮНЭТ ЗҮЙЛ</h2>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Бидний үнэт зүйлс</h3>
+                    <ul class="detail-content">
+                        <li><strong>Чанар</strong> – Сургалтын чанарыг нэн тэргүүнд эрхэмлэгч</li>
+                        <li><strong>Мэргэжлийн ур чадвар</strong> – Бодит мэдлэг, дадлага, ур чадварыг эзэмшүүлэгч</li>
+                        <li><strong>Хариуцлага</strong> – Төгсөгч бүр ажлын хариуцлагатай, мэргэшсэн ажилтан болох</li>
+                        <li><strong>Хөгжил</strong> – Шинэ мэдлэг, техник, технологи, арга барилаар хамтдаа хөгжигч</li>
+                        <li><strong>Хүндлэл</strong> – Суралцагч, багш, ажилтан бүр харилцан хүндлэлцэх, зөв соёлыг түгээгч</li>
+                        <li><strong>Үр дүн</strong> – Төгсөгч бүрийн амжилттай хөдөлмөр эрхлэлт, сэтгэл ханамж, ахиж дэвших боломж</li>
+                    </ul>
+                </div>
+                <div class="modal-email">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЗОРИЛГО Modal -->
+    <div class="modal-overlay" id="modal-zorigo">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-zorigo')">&times;</button>
+            <div class="modal-header">
+                <h2>🎯 ЗОРИЛГО</h2>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Бидний зорилго</h3>
+                    <p class="detail-content">Мэргэжил эзэмшихийг хүсэгч хэн бүхэнд практикт суурилсан чанартай сургалтаар чадамж эзэмшүүлж, ажил олгогчдын хүлээлтэд нийцсэн чадварлаг ажилтныг бэлтгэн гаргах.</p>
+                </div>
+                <div class="modal-email">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ЗОРИЛТ Modal -->
+    <div class="modal-overlay" id="modal-zorilt">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-zorilt')">&times;</button>
+            <div class="modal-header">
+                <h2>📋 ЗОРИЛТ</h2>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Бидний зорилтууд</h3>
+                    <ol class="detail-content">
+                        <li>Сургалтын чанарыг тасралтгүй сайжруулах</li>
+                        <li>Онол, практикийг хослуулсан сургалтыг хөгжүүлэх</li>
+                        <li>Цаг үе, өөрчлөлтийг мэдэрч онол, практикийн шинэчлэлийг сургалтын агуулгад нэвтрүүлэх</li>
+                        <li>Мэргэжлийн ур чадвартай багш, хамт олныг бий болгох, тогтвортой ажиллуулах</li>
+                        <li>Байгууллагаараа хамтдаа хөгжих, багаар ажиллах, бүтээмжээ нэмэгдүүлэх</li>
+                        <li>Сургах арга зүйг сайжруулах, суралцагч бүрийн онцлогийг мэдэрч ажиллах</li>
+                        <li>Хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн мэргэжлээр чадварлаг ажилтан бэлтгэх</li>
+                        <li>Төгсөгчдийг хувиараа хөдөлмөр эрхлэх, ажил олоход нь зөвлөгөө, чиглүүлэг өгөх</li>
+                        <li>Олон улсын стандарт, шаардлагад нийцсэн онол, ур чадварыг сургалтын хөтөлбөрт нэвтрүүлэх</li>
+                    </ol>
+                </div>
+                <div class="modal-email">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- СУРГАЛТЫН ЗАРЧИМ Modal -->
+    <div class="modal-overlay" id="modal-zarchim">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-zarchim')">&times;</button>
+            <div class="modal-header">
+                <h2>⚙️ СУРГАЛТЫН ЗАРЧИМ</h2>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Манай сургалтын зарчим</h3>
+                    <p class="detail-content" style="font-size: 1.2rem; font-weight: 600; text-align: center; padding: 20px;">"Шавь төвт сургалт"</p>
+                    <div class="principle-flow">
+                        <p style="font-size: 1.1rem;"><strong>"Онол → Дадлага → Бие даалт → Мэргэжлийн ур чадвар → Аюулгүй ажиллагаа"</strong></p>
+                        <p style="margin-top: 16px; font-size: 0.95rem;">гэсэн дарааллаар бодит чадвар эзэмшүүлэх.</p>
+                        <div class="flow-steps">
+                            <span class="flow-step">Онол</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-step">Дадлага</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-step">Бие даалт</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-step">Мэргэжлийн ур чадвар</span>
+                            <span class="flow-arrow">→</span>
+                            <span class="flow-step">Аюулгүй ажиллагаа</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-email">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- БОДЛОГО Modal -->
+    <div class="modal-overlay" id="modal-bodlogo">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal-bodlogo')">&times;</button>
+            <div class="modal-header">
+                <h2>📜 БОДЛОГО</h2>
+            </div>
+            <div class="modal-body">
+                <div class="detail-section">
+                    <h3>Бидний бодлого</h3>
+                    <p class="detail-content">Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн үзэж, хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн чанартай сургалтыг мэргэжлийн өндөр түвшинд явуулж, багш бүр мэргэжлийн болон заах арга, ур чадварыг тогтмол хөгжүүлж, төгсөгчдийг эзэмшсэн мэргэжлээрээ ажиллах, бизнес эрхлэх бодит чадвартай болгох.</p>
+                </div>
+                <div class="modal-email">
+                    <a href="mailto:Update.surgalt@gmail.com">📧 Gmail: Update.surgalt@gmail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
