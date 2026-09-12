@@ -193,19 +193,50 @@ body {
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-/* Cards General */
+/* ========================================================= */
+/* ЦАГААН КАРТУУДЫН ТЕКСТҮҮДИЙГ БАРААН ЦЭНХЭР БОЛГОСОН ХЭСЭГ  */
+/* ========================================================= */
 .card, .feature-card, .dorm-card, .placeholder-card {
-    background: #1e293b;
-    border: 1px solid #334155;
+    background: #f8fafc; /* Цагаан саарал арын дэвсгэр */
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 25px;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #0f172a; /* Үндсэн текстийн өнгө: Бараан цэнхэр */
+}
+
+/* Цагаан картон доторх бүх гарчиг болон бичвэрт бараан өнгө оноох */
+.card h1, .card h2, .card h3, .card h4,
+.feature-card h1, .feature-card h2, .feature-card h3, .feature-card h4,
+.placeholder-card h1, .placeholder-card h2, .placeholder-card h3, .placeholder-card h4 {
+    color: #0f172a !important;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card p, .feature-card p, .placeholder-card p, .card div, .feature-card div {
+    color: #334155 !important; /* Уншихад тодорхой саарал-цэнхэр */
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+/* Картон доторх товчлуур болон badge-ийн стиль */
+.card .btn-sm, .card button, .feature-card .btn-sm {
+    background-color: #e2e8f0;
+    color: #0f172a !important;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 6px 14px;
+    display: inline-block;
+    margin-top: 10px;
+    border: none;
 }
 
 .card:hover, .feature-card:hover, .placeholder-card:hover {
     border-color: #ff6b00;
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card-icon, .feature-icon, .placeholder-icon {
@@ -411,6 +442,6 @@ footer {
     background: #090d16;
     padding: 40px 0;
     border-top: 1px solid #1e293b;
-    color: #64748b;
+    color: #ecedf0;
     font-size: 0.85rem;
 }
