@@ -8,8 +8,8 @@
 
 /* Background өнгөнүүдийг жигдчлэн цэвэрхэн болгосон */
 body {
-    background-color: #d1d5df;
-    color: #157de6;
+    background-color: #2059e7;
+    color: #f6fafd;
     line-height: 1.6;
 }
 
@@ -25,7 +25,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #003488;
+    background-color: #f4f8fd;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -195,8 +195,8 @@ body {
 
 /* Cards General */
 .card, .feature-card, .dorm-card, .placeholder-card {
-    background: #1e293b;
-    border: 1px solid #334155;
+    background: hsl(214, 26%, 95%);
+    border: 1px solid #0a5ed4;
     border-radius: 12px;
     padding: 25px;
     text-align: center;
@@ -254,7 +254,7 @@ body {
 
 /* Course Cards */
 .course-card {
-    background: #1e293b;
+    background: #ffffff;
     border: 1px solid #334155;
     border-radius: 12px;
     padding: 25px;
@@ -268,7 +268,7 @@ body {
 }
 
 .course-card h3 {
-    color: #ffffff;
+    color: #2007fa;
     font-size: 1.2rem;
     margin-bottom: 12px;
 }
