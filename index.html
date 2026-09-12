@@ -105,14 +105,58 @@
                     <p>A ангилал, B ангилал, M ангилал.</p>
                     <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-3').showModal()">Дэлгэрэнгүй</button>
                 </div>
-                <div class="course-card">
-                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>4. Компьютерийн сургалт</h3>
-                    <p>Оффис хэрэглээ, Автокад, Фотошоп, Сошиал маркетинг сургалтууд.</p>
-                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-4').showModal()">Дэлгэрэнгүй</button>
-                </div>
-                <div class="course-card">
-                    <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
+                <<dialog id="course-4" class="custom-dialog sub-dialog">
+                    <h2>4. Компьютерийн сургалт</h2>
+                    <div class="sub-course-grid">
+                        
+                        <div class="sub-card">
+                            <h3>Оффис хэрэглээний программ</h3>
+                            <details class="duration-dropdown">
+                                <summary class="btn-time">Хугацаа харах</summary>
+                                <div class="duration-badges">
+                                    <span class="duration-box">7 хоног</span>
+                                    <span class="duration-box">14 хоног</span>
+                                    <span class="duration-box">21 хоног</span>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="sub-card">
+                            <h3>Автокад</h3>
+                            <details class="duration-dropdown">
+                                <summary class="btn-time">Хугацаа харах</summary>
+                                <div class="duration-badges">
+                                    <span class="duration-box">7 хоног</span>
+                                    <span class="duration-box">14 хоног</span>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="sub-card">
+                            <h3>Фотошоп</h3>
+                            <details class="duration-dropdown">
+                                <summary class="btn-time">Хугацаа харах</summary>
+                                <div class="duration-badges">
+                                    <span class="duration-box">7 хоног</span>
+                                    <span class="duration-box">14 хоног</span>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="sub-card">
+                            <h3>Сошиал маркетинг</h3>
+                            <details class="duration-dropdown">
+                                <summary class="btn-time">Хугацаа харах</summary>
+                                <div class="duration-badges">
+                                    <span class="duration-box">7 хоног</span>
+                                    <span class="duration-box">14 хоног</span>
+                                </div>
+                            </details>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-primary" style="margin-top: 15px;" onclick="this.closest('dialog').close()">Хаах</button>
+                </dialog>
                     <h3>5. Уул уурхай & Эрчим хүч</h3>
                     <p>Хүнд машин механизмын операторч, засварчин, автын цахилгаан.</p>
                     <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-5').showModal()">Дэлгэрэнгүй</button>
