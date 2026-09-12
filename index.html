@@ -1,7 +1,279 @@
-<dialog id="course-4" class="custom-dialog sub-dialog">
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE Мэргэжил сургалтын төв</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo"><span class="logo-accent">UPDATE</span> СУРГАЛТЫН ТӨВ</a>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active">НҮҮР ХУУДАС</a>
+                <a href="#about" class="nav-link">БИДНИЙ ТУХАЙ</a>
+                <a href="#principles" class="nav-link">СУРГАЛТЫН ЗАРЧИМ</a>
+                <a href="#courses" class="nav-link">СУРГАЛТЫН ТӨРӨЛ</a>
+                <a href="#travel" class="nav-link">АЯЛАЛЫН ХӨТӨЛБӨРТЭЙ СУРГАЛТ</a>
+                <a href="#dormitory" class="nav-link">ДОТУУР БАЙР</a>
+                <a href="#locations" class="nav-link">САЛБАРЫН БАЙРШИЛ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <span class="badge">НОМ ДӨЛ ХХК-ийн дэргэдэх</span>
+            <h1>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</h1>
+            <p class="subtitle">Хүссэн мэргэжлээ эзэмшээд хүрэх ирээдүйгээ бүтээ.</p>
+            <div class="glass-card">
+                <h3>Үйл ажиллагааны чиглэл</h3>
+                <p>Мэргэжил олгох болон мэргэжил дээшлүүлэх сургалт</p>
+                <div class="hero-btns">
+                    <button class="btn btn-primary" onclick="document.getElementById('modal-goal').showModal()">ЗОРИЛГО</button>
+                    <button class="btn btn-outline" onclick="document.getElementById('modal-target').showModal()">ЗОРИЛТ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">БИДНИЙ ТУХАЙ</h2>
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Алсын хараа</h3>
+                    <p>Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвараар тэргүүлэгч болох...</p>
+                    <button class="btn btn-sm" onclick="document.getElementById('modal-vision').showModal()">Алсын хараа</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Эрхэм зорилго</h3>
+                    <p>Практикт суурилсан чанартай сургалтаар чадварлаг ажилтнуудыг бэлтгэнэ...</p>
+                    <button class="btn btn-sm" onclick="document.getElementById('modal-mission').showModal()">Эрхэм зорилго</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-scroll"></i></div>
+                    <h3>Бодлого</h3>
+                    <p>Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн зах зээлийн эрэлтэд нийцсэн сургалт явуулах...</p>
+                    <button class="btn btn-sm" onclick="document.getElementById('modal-policy').showModal()">Бодлого</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Үнэт зүйл</h3>
+                    <p>Чанар, Мэргэжлийн ур чадвар, Хариуцлага, Хөгжил, Хүндлэл, Үр дүн...</p>
+                    <button class="btn btn-sm" onclick="document.getElementById('modal-values').showModal()">Үнэт зүйл</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="principles" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">СУРГАЛТЫН ЗАРЧИМ</h2>
+            <div class="grid grid-3">
+                <div class="feature-card"><i class="fas fa-tools feature-icon"></i><h3>Практикт суурилсан сургалт</h3><p>Онолыг бодит дадлагатай хослуулан ажиллах чадварыг эзэмшүүлнэ.</p></div>
+                <div class="feature-card"><i class="fas fa-user-check feature-icon"></i><h3>Мэргэжлийн ур чадвар</h3><p>Ажил олгогчдын хүлээлтэд нийцсэн боловсон хүчин бэлтгэнэ.</p></div>
+                <div class="feature-card"><i class="fas fa-award feature-icon"></i><h3>Чанартай боловсрол</h3><p>Сургалтын чанарыг олон улсын стандартад нийцүүлэн тасралтгүй сайжруулна.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="section">
+        <div class="container">
+            <h2 class="section-title">СУРГАЛТЫН ТӨРӨЛ</h2>
+            <div class="grid grid-3">
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-spa"></i></div>
+                    <h3>1. Гоо сайхан</h3>
+                    <p>Үсчин, Гоо засалч, Бариа засалч, Шивээс, Вакс, Нүүр будалт, Маникюр, Педикюр, Гуаша, Сормуус.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-1').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-cut"></i></div>
+                    <h3>2. Оёдол</h3>
+                    <p>Оёдолчин, хувцас эсгүүр болон загвар засал.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-2').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-car"></i></div>
+                    <h3>3. Авто жолоо</h3>
+                    <p>A ангилал, B ангилал, M ангилал.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-3').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>4. Компьютерийн сургалт</h3>
+                    <p>Оффис хэрэглээ, Автокад, Фотошоп, Сошиал маркетинг сургалтууд.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-4').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>5. Уул уурхай & Эрчим хүч</h3>
+                    <p>Хүнд машин механизмын операторч, засварчин, автын цахилгаан.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-5').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-fire"></i></div>
+                    <h3>6. Гагнуурчин</h3>
+                    <p>Цахилгаан гагнуур, Хийн гагнуур, Хагас автомат гагнуур, Аргон гагнуур.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-6').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>7. ХАБЭА</h3>
+                    <p>Асуудал хариуцсан ажилтан, Нийт ажилчдын сургалт, Ажил олгогч эздийн сургалт.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-7').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-glass-martini-alt"></i></div>
+                    <h3>8. Бармен</h3>
+                    <p>Бартендер, Бариста сургалт.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-8').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-wrench"></i></div>
+                    <h3>9. Засвар үйлчилгээ</h3>
+                    <p>Компьютер засвар, Гар утас засвар, Авто засвар.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-9').showModal()">Дэлгэрэнгүй</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="travel" class="section bg-alt">
+        <div class="container text-center">
+            <h2 class="section-title">АЯЛАЛЫН ХӨТӨЛБӨРТЭЙ СУРГАЛТ</h2>
+            <div class="glass-card">
+                <i class="fas fa-plane-departure" style="font-size: 3rem; color: #ff6b00; margin-bottom: 1rem;"></i>
+                <h3>Сурангаа аялах боломж</h3>
+                <p>Мэргэжлийн ур чадвар эзэмшихээс гадна тусгайлан бэлтгэсэн аяллын хөтөлбөрт хамрагдах боломжтой.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="dormitory" class="section">
+        <div class="container">
+            <h2 class="section-title">ДОТУУР БАЙР</h2>
+            <div class="grid grid-3">
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-mars"></i></div><h3>Эрэгтэй өрөө</h3></div>
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-venus"></i></div><h3>Эмэгтэй өрөө</h3></div>
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-utensils"></i></div><h3>Гал тогоо</h3></div>
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-bath"></i></div><h3>Угаалгын өрөө</h3></div>
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-couch"></i></div><h3>Дундын өрөө</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="locations" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">САЛБАРЫН БАЙРШИЛ</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>САЛБАР 1</h3>
+                    <p><strong>Байршил:</strong> Баянгол дүүрэг, 18 хороо, 3, 4-р хороолол, Элбэг их дэлгүүрийн зүүн талд, Хаан банкны байрны 4–6 давхар.</p>
+                    <p><strong>Утас:</strong> <a href="tel:+97677005589" class="phone-link">+976 77 005589</a></p>
+                    <p><strong>Ажлын цаг:</strong> Даваа – Баасан: 09:00 – 18:00 | Бямба: 10:00 – 16:00 | Ням: Амарна.</p>
+                </div>
+                <div class="card">
+                    <h3>САЛБАР 2</h3>
+                    <p><strong>Байршил:</strong> Сүхбаатар дүүрэг, 8 хороо, Сонор плаза оффис үйлчилгээний төв, 5 давхар, 503 тоот.</p>
+                    <p><strong>Утас:</strong> <a href="tel:+97677755589" class="phone-link">+976 77 755589</a></p>
+                    <p><strong>Ажлын цаг:</strong> Даваа – Баасан: 09:00 – 18:00 | Бямба: 10:00 – 16:00 | Ням: Амарна.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center;">
+            <p><strong>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</strong></p>
+            <p>“ХҮССЭН МЭРГЭЖЛЭЭ ЭЗЭМШЭЭД ХҮРЭХ ИРЭЭДҮЙГЭЭ БҮТЭЭ.”</p>
+            <p>Салбар 1: <a href="tel:+97677005589" style="color:#ff6b00;">+976 77 005589</a> | Салбар 2: <a href="tel:+97677755589" style="color:#ff6b00;">+976 77 755589</a></p>
+            <p>&copy; 2026 UPDATE Мэргэжил сургалтын төв. Бүх эрх хуулиар хамгаалагдсан.</p>
+        </div>
+    </footer>
+
+    <!-- POPUP MODALS -->
+    <dialog id="modal-goal" class="custom-dialog">
+        <h2>ЗОРИЛГО</h2>
+        <p>Мэргэжил эзэмшихийг хүсэгч хэн бүхэнд практикт суурилсан чанартай сургалтаар чадамж эзэмшүүлж, ажил олгогчдын хүлээлтэд нийцсэн чадварлаг ажилтныг бэлтгэн гаргах.</p>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-target" class="custom-dialog">
+        <h2>ЗОРИЛТ</h2>
+        <ul class="modal-list">
+            <li>Сургалтын чанарыг тасралтгүй сайжруулах</li>
+            <li>Онол, практикийг хослуулсан сургалтыг хөгжүүлэх</li>
+            <li>Цаг үе, өөрчлөлтийг мэдэрч онол, практикийн шинэчлэлийг сургалтын агуулгад нэвтрүүлэх</li>
+            <li>Мэргэжлийн ур чадвартай багш, хамт олныг бий болгох, тогтвортой ажиллуулах</li>
+            <li>Байгууллагаараа хамтдаа хөгжих, багаар ажиллах, бүтээмжээ нэмэгдүүлэх</li>
+            <li>Сургах арга зүйг сайжруулах, суралцагч бүрийн онцлогийг мэдэрч ажиллах</li>
+            <li>Хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн мэргэжлээр чадварлаг ажилтан бэлтгэх</li>
+            <li>Төгсөгчдийг хувиараа хөдөлмөр эрхлэх, ажил олоход нь зөвлөгөө, чиглүүлэг өгөх</li>
+            <li>Олон улсын стандарт, шаардлагад нийцсэн онол, ур чадварыг сургалтын хөтөлбөрт нэвтрүүлэх</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-vision" class="custom-dialog">
+        <h2>Алсын хараа</h2>
+        <p>Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвар, шинэчлэлээр тэргүүлж, олон улсад хүлээн зөвшөөрөгдөх сургалтын орчныг бүрдүүлэгч жишиг төв болох.</p>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-mission" class="custom-dialog">
+        <h2>Эрхэм зорилго</h2>
+        <p>Практикт суурилсан чанартай сургалтаар мэргэжлийн өндөр ур чадварыг эзэмшүүлж, өрсөлдөх чадамжтай чадварлаг ажилтныг бэлтгэнэ.</p>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-policy" class="custom-dialog">
+        <h2>Бодлого</h2>
+        <p>Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн үзэж, чанартай сургалтыг мэргэжлийн түвшинд явуулж, төгсөгчдийг ажиллах, бизнес эрхлэх бодит чадвартай болгох.</p>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-values" class="custom-dialog">
+        <h2>Үнэт зүйл</h2>
+        <p>Чанар, Мэргэжлийн ур чадвар, Хариуцлага, Хөгжил, Хүндлэл, Үр дүн.</p>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="course-1" class="custom-dialog">
+        <h2>1. Гоо сайхан</h2>
+        <ul class="modal-list">
+            <li>Үсчин</li><li>Гоо засалч</li><li>Бариа засалч</li><li>Шивээс</li><li>Вакс</li>
+            <li>Нүүр будалт</li><li>Маникюр</li><li>Педикюр</li><li>Гуаша</li><li>Сормуус</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="course-2" class="custom-dialog">
+        <h2>2. Оёдол</h2>
+        <ul class="modal-list">
+            <li>Оёдолчин, Эсгүүрчин</li>
+            <li>Хувцас загвар, засал</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="course-3" class="custom-dialog">
+        <h2>3. Авто жолоо</h2>
+        <ul class="modal-list">
+            <li>A ангилал</li><li>B ангилал</li><li>M ангилал</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="course-4" class="custom-dialog sub-dialog">
         <h2>4. Компьютерийн сургалт</h2>
         <div class="sub-course-grid">
-            
             <div class="sub-card">
                 <h3>Оффис хэрэглээний программ</h3>
                 <div class="duration-badges">
@@ -10,7 +282,6 @@
                     <span class="duration-box">21 хоног</span>
                 </div>
             </div>
-
             <div class="sub-card">
                 <h3>Автокад</h3>
                 <div class="duration-badges">
@@ -18,7 +289,6 @@
                     <span class="duration-box">14 хоног</span>
                 </div>
             </div>
-
             <div class="sub-card">
                 <h3>Фотошоп</h3>
                 <div class="duration-badges">
@@ -26,7 +296,6 @@
                     <span class="duration-box">14 хоног</span>
                 </div>
             </div>
-
             <div class="sub-card">
                 <h3>Сошиал маркетинг</h3>
                 <div class="duration-badges">
@@ -34,7 +303,54 @@
                     <span class="duration-box">14 хоног</span>
                 </div>
             </div>
-
         </div>
         <button class="btn btn-primary" style="margin-top: 15px;" onclick="this.closest('dialog').close()">Хаах</button>
     </dialog>
+
+    <dialog id="course-5" class="custom-dialog">
+        <h2>5. Уул уурхайн эрчим хүч</h2>
+        <ul class="modal-list">
+            <li>Хүнд машин механизмын операторч</li>
+            <li>Хүнд машин механизмын засварчин</li>
+            <li>Автын цахилгаан</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="course-6" class="custom-dialog">
+        <h2>6. Гагнуурчин</h2>
+        <ul class="modal-list">
+            <li>Цахилгаан гагнуур</li><li>Хийн гагнуур</li>
+            <li>Хагас автомат гагнуур</li><li>Аргон гагнуур</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="course-7" class="custom-dialog">
+        <h2>7. ХАБЭА</h2>
+        <ul class="modal-list">
+            <li>Асуудал хариуцсан ажилтан</li>
+            <li>Нийт ажилчдын сургалт</li>
+            <li>Ажил олгогч эздийн сургалт</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="course-8" class="custom-dialog">
+        <h2>8. Бармен</h2>
+        <ul class="modal-list">
+            <li>Бартендер</li><li>Бариста</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="course-9" class="custom-dialog">
+        <h2>9. Засвар үйлчилгээ</h2>
+        <ul class="modal-list">
+            <li>Компьютер засвар</li><li>Гар утас засвар</li><li>Авто засвар</li>
+        </ul>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+</body>
+</html>
