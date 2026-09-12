@@ -1,427 +1,234 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-    <meta charset="UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPDATE Мэргэжил сургалтын төв | НОМ ДӨЛ ХХК</title>
-    <meta name="description" content="НОМ ДӨЛ ХХК-ийн дэргэдэх UPDATE Мэргэжил сургалтын төв. Практикт суурилсан чанартай мэргэжлийн сургалт.">
-    
-    <!-- Google Fonts: Arial font family fallback -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>UPDATE Мэргэжил сургалтын төв</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header id="main-header">
-        <div class="container header-container">
-            <div class="logo.jpg">
-                <a href="#hero">
-                    <span class="logo.jpg">UPDATE</span>
-                    <span class="logo-text-bottom">МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</span>
-                </a>
-            </div>
-            
-            <button class="mobile-menu-btn" aria-label="Цэс нээх">
-                <i class="fas fa-bars"></i>
-            </button>
-
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo"><span class="logo-accent">UPDATE</span> СУРГАЛТЫН ТӨВ</a>
             <nav class="nav-menu">
-                <ul>
-                    <li><a href="#hero" class="nav-link active">Нүүр</a></li>
-                    <li><a href="#about" class="nav-link">Бидний тухай</a></li>
-                    <li><a href="#environment" class="nav-link">Суралцах орчин</a></li>
-                    <li><a href="#dormitory" class="nav-link">Дотуур байр</a></li>
-                    <li class="dropdown">
-                        <a href="#branches" class="nav-link dropbtn">Салбарын байршил <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-content">
-                            <li><a href="#branch1">Салбар 1</a></li>
-                            <li><a href="#branch2">Салбар 2</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <a href="#home" class="nav-link active">НҮҮР ХУУДАС</a>
+                <a href="#about" class="nav-link">БИДНИЙ ТУХАЙ</a>
+                <a href="#principles" class="nav-link">СУРГАЛТЫН ЗАРЧИМ</a>
+                <a href="#courses" class="nav-link">СУРГАЛТЫН ТӨРӨЛ</a>
+                <a href="#travel" class="nav-link">АЯЛАЛЫН ХӨТӨЛБӨРТЭЙ СУРГАЛТ</a>
+                <a href="#dormitory" class="nav-link">ДОТУУР БАЙР</a>
+                <a href="#locations" class="nav-link">САЛБАРЫН БАЙРШИЛ</a>
             </nav>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="overlay"></div>
-        <div class="container hero-content fade-in-up">
-            <h1 class="hero-title">
-                UPDATE<br>
-                <span class="highlight">МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</span>
-            </h1>
-            <p class="hero-slogan">
-                "ХҮССЭН МЭРГЭЖЛЭЭ ЭЗЭМШЭЭД<br>
-                ХҮРЭХ ИРЭЭДҮЙГЭЭ БҮТЭЭ."
-            </p>
-            <p class="hero-desc">
-                Мэргэжил эзэмших, ур чадвараа хөгжүүлэх хүсэлтэй хүн бүрт практикт суурилсан чанартай сургалтыг хүргэнэ.
-            </p>
-            <div class="hero-buttons">
-                <a href="#about" class="btn btn-primary">Бидний тухай</a>
-                <a href="#branches" class="btn btn-outline">Салбарын байршил</a>
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <span class="badge">НОМ ДӨЛ ХХК-ийн дэргэдэх</span>
+            <h1>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</h1>
+            <p class="subtitle">Хүссэн мэргэжлээ эзэмшээд хүрэх ирээдүйгээ бүтээ.</p>
+            <div class="glass-card">
+                <h3>Үйл ажиллагааны чиглэл</h3>
+                <p>Мэргэжил олгох болон мэргэжил дээшлүүлэх сургалт</p>
+                <div class="hero-btns">
+                    <button class="btn btn-primary" onclick="openModal('goal-modal')">ЗОРИЛГО – Дэлгэрэнгүй</button>
+                    <button class="btn btn-outline" onclick="openModal('target-modal')">ЗОРИЛТ – Дэлгэрэнгүй</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="section about-section">
+    <section id="about" class="section">
         <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-subtitle">UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</h2>
-                <h3 class="section-title">БИДНИЙ ТУХАЙ</h3>
-            </div>
-            
-            <div class="about-intro">
-                <p>“НОМ ДӨЛ” ХХК-ийн дэргэдэх “UPDATE” мэргэжил сургалтын төв нь 2016 оны 4-р сард “Амжилтын алхам” нэртэйгээр Үсчин, Гоо сайханч, Нягтлан бодох бүртгэл тооцооны ажилтан, Компьютерийн операторч, Цэцэрлэгийн туслах багш зэрэг мэргэжлээр сургалтын үйл ажиллагааг явуулж эхэлсэн.</p>
-                <p>2019 оны 5-р сараас үйл ажиллагаагаа өргөтгөн “UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ” болж Гагнуурчин, Барилгын цахилгаанчин, Хүнд машин механизмын операторч, Сантехникч, Барилгын засал чимэглэлчин, Барилгын мужаан, Жолооч, Оёмол бүтээгдэхүүний оёдолчин, Бариста, Бартендер, Хангамжийн нярав, Хүний нөөцийн мэргэжилтэн, Архив албан хэрэг хөтлөлт, Худалдагч касс, Шивээсчин, Хөдөлмөрийн аюулгүй байдлын эрүүл ахуйн сургалтуудыг шинээр зохион байгуулж ирсэн.</p>
-                <p>Өдгөө 7 дахь жилдээ сургалтын үйл ажиллагаагаа амжилттай зохион байгуулж, салбарласан байна.</p>
-            </div>
-
-            <!-- Timeline -->
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2016</span>
-                        <h4>Үүсгэн байгуулагдсан</h4>
-                        <p>“Амжилтын алхам” нэртэйгээр үйл ажиллагаагаа эхлүүлсэн.</p>
-                    </div>
+            <h2 class="section-title">БИДНИЙ ТУХАЙ</h2>
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Алсын хараа</h3>
+                    <p>Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвараар тэргүүлэгч болох...</p>
+                    <button class="btn btn-sm" onclick="openModal('vision-modal')">Дэлгэрэнгүй</button>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">2019</span>
-                        <h4>Өргөжсөн</h4>
-                        <p>“UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ” болон үйл ажиллагаагаа өргөжүүлсэн.</p>
-                    </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Эрхэм зорилго</h3>
+                    <p>Практикт суурилсан чанартай сургалтаар чадварлаг ажилтнуудыг бэлтгэнэ...</p>
+                    <button class="btn btn-sm" onclick="openModal('mission-modal')">Дэлгэрэнгүй</button>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-year">ӨНӨӨДӨР</span>
-                        <h4>Хөгжил</h4>
-                        <p>Олон төрлийн мэргэжлээр сургалт зохион байгуулж, суралцагчдад практик ур чадвар эзэмшүүлж байна.</p>
-                    </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-scroll"></i></div>
+                    <h3>Бодлого</h3>
+                    <p>Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн зах зээлийн эрэлтэд нийцсэн сургалт явуулах...</p>
+                    <button class="btn btn-sm" onclick="openModal('policy-modal')">Дэлгэрэнгүй</button>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Үнэт зүйл</h3>
+                    <p>Чанар, Мэргэжлийн ур чадвар, Хариуцлага, Хөгжил, Хүндлэл, Үр дүн...</p>
+                    <button class="btn btn-sm" onclick="openModal('values-modal')">Дэлгэрэнгүй</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Slogan Visual Section -->
-    <section class="slogan-banner parallax-bg">
+    <section id="principles" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">СУРГАЛТЫН ЗАРЧИМ</h2>
+            <div class="grid grid-3">
+                <div class="feature-card"><i class="fas fa-tools feature-icon"></i><h3>Практикт суурилсан сургалт</h3><p>Онолыг бодит дадлагатай хослуулан ажиллах чадварыг эзэмшүүлнэ.</p></div>
+                <div class="feature-card"><i class="fas fa-user-check feature-icon"></i><h3>Мэргэжлийн ур чадвар</h3><p>Ажил олгогчдын хүлээлтэд нийцсэн боловсон хүчин бэлтгэнэ.</p></div>
+                <div class="feature-card"><i class="fas fa-award feature-icon"></i><h3>Чанартай боловсрол</h3><p>Сургалтын чанарыг олон улсын стандартад нийцүүлэн тасралтгүй сайжруулна.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="section">
+        <div class="container">
+            <h2 class="section-title">СУРГАЛТЫН ТӨРӨЛ</h2>
+            <div class="grid grid-3">
+                <div class="course-card">
+                    <h3><i class="fas fa-spa"></i> Гоо сайхан</h3>
+                    <ul class="course-list">
+                        <li>Үсчин, Гоо засалч, Бариа засалч</li>
+                        <li>Шивээс, Вакс, Нүүр будалт</li>
+                        <li>Маникюр, Педикюр, Гуаша, Сормуус, Оёдол</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3><i class="fas fa-car"></i> Авто жолоо</h3>
+                    <ul class="course-list">
+                        <li>A ангилал</li>
+                        <li>B ангилал</li>
+                        <li>M ангилал</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3><i class="fas fa-laptop-code"></i> Оффис ажилтан</h3>
+                    <ul class="course-list">
+                        <li>Хангамжийн нярав, Нягтлан бодох</li>
+                        <li>Хүний нөөц, Архив албан хэрэг</li>
+                        <li>Оффис программ, Автокад, Фотошоп, Сошиал маркетинг</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3><i class="fas fa-hard-hat"></i> Уул уурхайн эрчим хүч</h3>
+                    <ul class="course-list">
+                        <li>Хүнд машин механизмын операторч</li>
+                        <li>Хүнд машин механизмын засварчин</li>
+                        <li>Автын цахилгаан</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3><i class="fas fa-fire"></i> Гагнуурчин</h3>
+                    <ul class="course-list">
+                        <li>Цахилгаан & Хийн гагнуур</li>
+                        <li>Хагас автомат & Аргон гагнуур</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3><i class="fas fa-shield-alt"></i> Бусад сургалтууд</h3>
+                    <ul class="course-list">
+                        <li>ХАБЭА (Ажилтан, Ажилчид, Ажил олгогч)</li>
+                        <li>Бармен, Бартендер, Бариста</li>
+                        <li>Компьютер, Гар утас, Авто засвар</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="travel" class="section bg-alt">
         <div class="container text-center">
-            <h2 class="banner-text">“ХҮССЭН МЭРГЭЖЛЭЭ ЭЗЭМШЭЭД<br>ХҮРЭХ ИРЭЭДҮЙГЭЭ БҮТЭЭ.”</h2>
-        </div>
-    </section>
-
-    <!-- Mission & Vision -->
-    <section class="section bg-light">
-        <div class="container grid-2">
-            <div class="card mission-card scroll-reveal">
-                <div class="icon-box"><i class="fas fa-bullseye"></i></div>
-                <h3>ЭРХЭМ ЗОРИЛГО</h3>
-                <p>“Практикт суурилсан чанартай сургалтаар мэргэжлийн өндөр ур чадварыг эзэмшүүлж, өрсөлдөх чадамжтай, хөгжих эрмэлзэлтэй “ЧАДВАРЛАГ АЖИЛТАН”-ыг бид бэлтгэнэ.”</p>
-            </div>
-            <div class="card vision-card scroll-reveal">
-                <div class="icon-box"><i class="fas fa-eye"></i></div>
-                <h3>АЛСЫН ХАРАА</h3>
-                <p>“Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвар, шинэчлэлээр тэргүүлж, олон улсад хүлээн зөвшөөрөгдөх сургалтын зорилго, зорилтот орчныг бүрдүүлж, ажил олгогч болон төгсөгч нартай эргэх холбоотой ажиллагч “МЭРГЭЖЛИЙН СУРГАЛТЫН ЖИШИГ ТӨВ” болох.”</p>
+            <h2 class="section-title">АЯЛАЛЫН ХӨТӨЛБӨРТЭЙ СУРГАЛТ</h2>
+            <div class="glass-card">
+                <i class="fas fa-plane-departure" style="font-size: 3rem; color: #ff6b00; margin-bottom: 1rem;"></i>
+                <h3>Сурангаа аялах боломж</h3>
+                <p>Мэргэжлийн ур чадвар эзэмшихээс гадна тусгайлан бэлтгэсэн аяллын хөтөлбөрт хамрагдах боломжтой.</p>
             </div>
         </div>
     </section>
 
-    <!-- Values -->
-    <section class="section values-section">
+    <section id="dormitory" class="section">
         <div class="container">
-            <div class="section-header text-center">
-                <h3 class="section-title">ҮНЭТ ЗҮЙЛС</h3>
-            </div>
-            <div class="grid-3 values-grid">
-                <div class="value-card scroll-reveal">
-                    <i class="fas fa-gem"></i>
-                    <h4>ЧАНАР</h4>
-                    <p>Сургалтын чанарыг нэн тэргүүнд эрхэмлэгч.</p>
-                </div>
-                <div class="value-card scroll-reveal">
-                    <i class="fas fa-tools"></i>
-                    <h4>МЭРГЭЖЛИЙН УР ЧАДВАР</h4>
-                    <p>Бодит мэдлэг, дадлага, ур чадварыг эзэмшүүлэгч.</p>
-                </div>
-                <div class="value-card scroll-reveal">
-                    <i class="fas fa-handshake"></i>
-                    <h4>ХАРИУЦЛАГА</h4>
-                    <p>Төгсөгч бүр ажлын хариуцлагатай, мэргэшсэн ажилтан болох.</p>
-                </div>
-                <div class="value-card scroll-reveal">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>ХӨГЖИЛ</h4>
-                    <p>Шинэ мэдлэг, техник, технологи, арга барилаар хамтдаа хөгжигч.</p>
-                </div>
-                <div class="value-card scroll-reveal">
-                    <i class="fas fa-users"></i>
-                    <h4>ХҮНДЛЭЛ</h4>
-                    <p>Суралцагч, багш, ажилтан бүр харилцан хүндлэлцэх, зөв соёлыг түгээгч.</p>
-                </div>
-                <div class="value-card scroll-reveal">
-                    <i class="fas fa-trophy"></i>
-                    <h4>ҮР ДҮН</h4>
-                    <p>Төгсөгч бүрийн амжилттай хөдөлмөр эрхлэлт, сэтгэл ханамж, ахиж дэвших боломж.</p>
-                </div>
+            <h2 class="section-title">ДОТУУР БАЙР</h2>
+            <div class="grid grid-3">
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-mars"></i></div><h3>Эрэгтэй өрөө</h3></div>
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-venus"></i></div><h3>Эмэгтэй өрөө</h3></div>
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-utensils"></i></div><h3>Гал тогоо</h3></div>
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-bath"></i></div><h3>Угаалгын өрөө</h3></div>
+                <div class="dorm-card"><div class="dorm-img-placeholder"><i class="fas fa-couch"></i></div><h3>Дундын өрөө</h3></div>
             </div>
         </div>
     </section>
 
-    <!-- Goals & Objectives -->
-    <section class="section bg-dark text-white">
+    <section id="locations" class="section bg-alt">
         <div class="container">
-            <div class="grid-2">
-                <div class="goal-box scroll-reveal">
-                    <h3>ЗОРИЛГО</h3>
-                    <p>“Мэргэжил эзэмшихийг хүсэгч хэн бүхэнд практикт суурилсан чанартай сургалтаар чадамж эзэмшүүлж, ажил олгогчдын хүлээлтэд нийцсэн чадварлаг ажилтныг бэлтгэн гаргах.”</p>
+            <h2 class="section-title">САЛБАРЫН БАЙРШИЛ</h2>
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="switchTab('branch1')">САЛБАР 1</button>
+                <button class="tab-btn" onclick="switchTab('branch2')">САЛБАР 2</button>
+            </div>
+            <div id="branch1" class="tab-content active">
+                <div class="location-info">
+                    <h3>САЛБАР 1</h3>
+                    <p><strong>Байршил:</strong> Баянгол дүүрэг, 18 хороо, 3, 4-р хороолол, Элбэг их дэлгүүрийн зүүн талд, Хаан банкны байрны 4–6 давхар.</p>
+                    <p><strong>Холбоо барих утас / Ажлын утас:</strong> <a href="tel:+97677005589" class="phone-link">+976 77 005589</a></p>
+                    <p><strong>Ажлын цаг:</strong> Даваа – Баасан: 09:00 – 18:00 | Бямба: 10:00 – 16:00 | Ням: Амарна.</p>
                 </div>
-                <div class="objectives-box scroll-reveal">
-                    <h3>ЗОРИЛТ</h3>
-                    <ol class="objectives-list">
-                        <li>Сургалтын чанарыг тасралтгүй сайжруулах</li>
-                        <li>Онол, практикийг хослуулсан сургалтыг хөгжүүлэх</li>
-                        <li>Цаг үе, өөрчлөлтийг мэдэрч онол, практикийн шинэчлэлийг сургалтын агуулгад нэвтрүүлэх</li>
-                        <li>Мэргэжлийн ур чадвартай багш, хамт олныг бий болгох, тогтвортой ажиллуулах</li>
-                        <li>Байгууллагаараа хамтдаа хөгжих, багаар ажиллах, бүтээмжээ нэмэгдүүлэх</li>
-                        <li>Сургах арга зүйг сайжруулах, суралцагч бүрийн онцлогийг мэдэрч ажиллах</li>
-                        <li>Хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн мэргэжлээр чадварлаг ажилтан бэлтгэх</li>
-                        <li>Төгсөгчдийг хувиараа хөдөлмөр эрхлэх, ажил олоход нь зөвлөгөө, чиглүүлэг өгөх</li>
-                        <li>Олон улсын стандарт, шаардлагад нийцсэн онол, ур чадварыг сургалтын хөтөлбөрт нэвтрүүлэх</li>
-                    </ol>
+            </div>
+            <div id="branch2" class="tab-content">
+                <div class="location-info">
+                    <h3>САЛБАР 2</h3>
+                    <p><strong>Байршил:</strong> Сүхбаатар дүүрэг, 8 хороо, Сонор плаза оффис үйлчилгээний төв, 5 давхар, 503 тоот.</p>
+                    <p><strong>Холбоо барих утас / Ажлын утас:</strong> <a href="tel:+97677755589" class="phone-link">+976 77 755589</a></p>
+                    <p><strong>Ажлын цаг:</strong> Даваа – Баасан: 09:00 – 18:00 | Бямба: 10:00 – 16:00 | Ням: Амарна.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Training Principles -->
-    <section class="section principles-section">
-        <div class="container text-center">
-            <h3 class="section-title">СУРГАЛТЫН ЗАРЧИМ</h3>
-            <h4 class="principle-highlight">“ШАВЬ ТӨВТ СУРГАЛТ”</h4>
-            
-            <div class="process-flow">
-                <div class="process-step">
-                    <span class="step-number">1</span>
-                    <p>ОНОЛ</p>
-                </div>
-                <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="process-step">
-                    <span class="step-number">2</span>
-                    <p>ДАДЛАГА</p>
-                </div>
-                <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="process-step">
-                    <span class="step-number">3</span>
-                    <p>БИЕ ДААЛТ</p>
-                </div>
-                <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="process-step">
-                    <span class="step-number">4</span>
-                    <p>МЭРГЭЖЛИЙН<br>УР ЧАДВАР</p>
-                </div>
-                <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="process-step">
-                    <span class="step-number">5</span>
-                    <p>АЮУЛГҮЙ<br>АЖИЛЛАГАА</p>
-                </div>
-            </div>
-
-            <div class="policy-box scroll-reveal">
-                <h4>БОДЛОГО</h4>
-                <p>“Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн үзэж, хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн чанартай сургалтыг мэргэжлийн өндөр түвшинд явуулж, багш бүр мэргэжлийн болон заах арга, ур чадварыг тогтмол хөгжүүлж, төгсөгчдийг эзэмшсэн мэргэжлээрээ ажиллах, бизнес эрхлэх бодит чадвартай болгох.”</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Learning Environment -->
-    <section id="environment" class="section environment-section bg-light">
+    <footer>
         <div class="container">
-            <div class="section-header text-center">
-                <h3 class="section-title">ТАНЫ СУРАЛЦАХ ОРЧИН —<br>БИДНИЙ АНХААРАЛ</h3>
-            </div>
-            <div class="quote-block">
-                <p>“Мэргэжил эзэмшихэд зөвхөн сайн багш хангалтгүй. Суралцагчийн өдөр тутмын хэрэгцээ, тав тух, дадлага хийх боломж, аюулгүй байдал, суралцах орчин зэрэг нь сургалтын чанарт чухал нөлөөтэй. Тиймээс UPDATE Мэргэжил сургалтын төв нь суралцагчдаа суралцахад таатай, тухтай, бодит ур чадвараа хөгжүүлэх боломжтой орчноор хангахад онцгой анхааран ажилладаг.”</p>
-            </div>
-
-            <div class="training-cards grid-4">
-                <div class="t-card scroll-reveal">
-                    <i class="fas fa-book-open"></i>
-                    <h4>Онолын сургалт</h4>
-                </div>
-                <div class="t-card scroll-reveal">
-                    <i class="fas fa-laptop-code"></i>
-                    <h4>Практик дадлага</h4>
-                </div>
-                <div class="t-card scroll-reveal">
-                    <i class="fas fa-hard-hat"></i>
-                    <h4>Бодит ажлын орчин</h4>
-                </div>
-                <div class="t-card scroll-reveal">
-                    <i class="fas fa-seedling"></i>
-                    <h4>Ур чадвар хөгжүүлэлт</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dormitory -->
-    <section id="dormitory" class="section dormitory-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <h3 class="section-title">СУРАЛЦАГЧДЫН ТОХИТОЙ ДОТУУР БАЙР</h3>
-            </div>
-            <div class="dormitory-content">
-                <p class="lead-text">Орон нутгаас зорин ирж суралцаж буй суралцагчдынхаа амьдрах нөхцөл, тав тухыг анхаарч, сургалтын төвийн дэргэд дотуур байраар хангах боломжийг бүрдүүлсэн.</p>
-                
-                <div class="dormitory-grid grid-2">
-                    <div class="dorm-info">
-                        <p>Дотуур байранд эрэгтэй болон эмэгтэй суралцагчдын байрлах өрөөг тусад нь зохион байгуулж, суралцагч бүр тайван, тухтай амрах нөхцөлийг бүрдүүлсэн.</p>
-                        <p>Мөн суралцагчдын өдөр тутмын хэрэгцээнд зориулсан гал тогоо, угаалгын өрөө болон дундын өрөөтэй бөгөөд хичээл, дадлагынхаа хажуугаар ая тухтай амарч, чөлөөт цагаа зөв боловсон өнгөрүүлэх орчныг бүрдүүлэн ажиллаж байна.</p>
-                    </div>
-                    <div class="dorm-features">
-                        <div class="feature-item">
-                            <i class="fas fa-female"></i>
-                            <span>Эмэгтэй суралцагчдын өрөө</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-male"></i>
-                            <span>Эрэгтэй суралцагчдын өрөө</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-utensils"></i>
-                            <span>Гал тогоо</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-shower"></i>
-                            <span>Угаалгын өрөө</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-couch"></i>
-                            <span>Дундын өрөө</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Branches -->
-    <section id="branches" class="section branches-section bg-light">
-        <div class="container">
-            <div class="section-header text-center">
-                <h3 class="section-title">САЛБАРЫН БАЙРШИЛ</h3>
-                <p class="section-desc">Танд ойрхон байрлах салбараа сонгоно уу</p>
-            </div>
-
-            <div class="branch-tabs">
-                <button class="tab-btn active" data-tab="branch1">САЛБАР 1</button>
-                <button class="tab-btn" data-tab="branch2">САЛБАР 2</button>
-            </div>
-
-            <div class="branch-content-wrapper">
-                <!-- Branch 1 -->
-                <div id="branch1" class="branch-content active">
-                    <div class="branch-card">
-                        <div class="branch-info">
-                            <h3>САЛБАР 1</h3>
-                            <div class="info-group">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p><strong>Байршил:</strong><br>Баянгол дүүрэг, 18 хороо, 3, 4-р хороолол, Элбэг их дэлгүүрийн зүүн талд, Хаан банкны байрны 4–6 давхар.</p>
-                            </div>
-                            <div class="info-group">
-                                <i class="fas fa-phone-alt"></i>
-                                <p><strong>Холбоо барих утас / Ажлын утас:</strong><br><a href="tel:+97677005589">+976 77 005589</a></p>
-                            </div>
-                            <div class="info-group">
-                                <i class="far fa-clock"></i>
-                                <p><strong>Ажлын цаг:</strong><br>Даваа – Баасан: 09:00 – 18:00<br>Бямба: 10:00 – 16:00<br>Ням: Амарна.</p>
-                            </div>
-                        </div>
-                        <div class="branch-map">
-                            <!-- Placeholder for Map -->
-                            <div class="map-placeholder">
-                                <i class="fas fa-map"></i>
-                                <p>Google Maps Байршил</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Branch 2 -->
-                <div id="branch2" class="branch-content">
-                    <div class="branch-card">
-                        <div class="branch-info">
-                            <h3>САЛБАР 2</h3>
-                            <div class="info-group">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p><strong>Байршил:</strong><br>Сүхбаатар дүүрэг, 8 хороо, Сонор плаза оффис үйлчилгээний төв, 5 давхар, 503 тоот.</p>
-                            </div>
-                            <div class="info-group">
-                                <i class="fas fa-phone-alt"></i>
-                                <p><strong>Холбоо барих утас / Ажлын утас:</strong><br><a href="tel:+97677755589">+976 77 755589</a></p>
-                            </div>
-                            <div class="info-group">
-                                <i class="far fa-clock"></i>
-                                <p><strong>Ажлын цаг:</strong><br>Даваа – Баасан: 09:00 – 18:00<br>Бямба: 10:00 – 16:00<br>Ням: Амарна.</p>
-                            </div>
-                        </div>
-                        <div class="branch-map">
-                            <!-- Placeholder for Map -->
-                            <div class="map-placeholder">
-                                <i class="fas fa-map"></i>
-                                <p>Google Maps Байршил</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-logo">
-                    <h3>UPDATE<br>МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</h3>
-                    <p class="footer-slogan">“ХҮССЭН МЭРГЭЖЛЭЭ ЭЗЭМШЭЭД ХҮРЭХ ИРЭЭДҮЙГЭЭ БҮТЭЭ.”</p>
-                </div>
-                <div class="footer-contact">
-                    <div class="contact-item">
-                        <span>Салбар 1:</span>
-                        <a href="tel:+97677005589">+976 77 005589</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>Салбар 2:</span>
-                        <a href="tel:+97677755589">+976 77 755589</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-nav">
-                <a href="#hero">Нүүр</a>
-                <a href="#about">Бидний тухай</a>
-                <a href="#environment">Суралцах орчин</a>
-                <a href="#dormitory">Дотуур байр</a>
-                <a href="#branches">Салбарын байршил</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 UPDATE Мэргэжил сургалтын төв. Бүх эрх хуулиар хамгаалагдсан.</p>
-            </div>
+            <p><strong>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</strong></p>
+            <p>“ХҮССЭН МЭРГЭЖЛЭЭ ЭЗЭМШЭЭД ХҮРЭХ ИРЭЭДҮЙГЭЭ БҮТЭЭ.”</p>
+            <p>Салбар 1: <a href="tel:+97677005589" style="color:#ff6b00;">+976 77 005589</a> | Салбар 2: <a href="tel:+97677755589" style="color:#ff6b00;">+976 77 755589</a></p>
+            <p>&copy; 2026 UPDATE Мэргэжил сургалтын төв. Бүх эрх хуулиар хамгаалагдсан.</p>
         </div>
     </footer>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-card">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <div id="goal-modal" class="modal-template">
+        <h2>ЗОРИЛГО</h2>
+        <p>Мэргэжил эзэмшихийг хүсэгч хэн бүхэнд практикт суурилсан чанартай сургалтаар чадамж эзэмшүүлж, ажил олгогчдын хүлээлтэд нийцсэн чадварлаг ажилтныг бэлтгэн гаргах.</p>
+    </div>
+    <div id="target-modal" class="modal-template">
+        <h2>ЗОРИЛТ</h2>
+        <p>• Сургалтын чанарыг тасралтгүй сайжруулах<br>• Онол, практикийг хослуулсан сургалтыг хөгжүүлэх<br>• Хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн мэргэжлээр чадварлаг ажилтан бэлтгэх</p>
+    </div>
+    <div id="vision-modal" class="modal-template">
+        <h2>Алсын хараа</h2>
+        <p>Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвар, шинэчлэлээр тэргүүлж, олон улсад хүлээн зөвшөөрөгдөх сургалтын орчныг бүрдүүлэгч жишиг төв болох.</p>
+    </div>
+    <div id="mission-modal" class="modal-template">
+        <h2>Эрхэм зорилго</h2>
+        <p>Практикт суурилсан чанартай сургалтаар мэргэжлийн өндөр ур чадварыг эзэмшүүлж, өрсөлдөх чадамжтай чадварлаг ажилтныг бэлтгэнэ.</p>
+    </div>
+    <div id="policy-modal" class="modal-template">
+        <h2>Бодлого</h2>
+        <p>Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн үзэж, чанартай сургалтыг мэргэжлийн түвшинд явуулж, төгсөгчдийг ажиллах, бизнес эрхлэх бодит чадвартай болгох.</p>
+    </div>
+    <div id="values-modal" class="modal-template">
+        <h2>Үнэт зүйл</h2>
+        <p>Чанар, Мэргэжлийн ур чадвар, Хариуцлага, Хөгжил, Хүндлэл, Үр дүн.</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
