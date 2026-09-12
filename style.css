@@ -79,7 +79,7 @@ body {
 .section-title {
     text-align: center;
     font-size: 1.9rem;
-    color: #ffffff;
+    color: #181bdf;
     margin-bottom: 25px;
     position: relative;
     font-weight: 700;
@@ -104,8 +104,8 @@ body {
 }
 
 .badge {
-    background: #ff6b00;
-    color: white;
+    background: #fffefe;
+    color: rgb(3, 9, 104);
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -126,9 +126,9 @@ body {
 }
 
 .glass-card {
-    background: rgba(2, 86, 223, 0.8);
+    background: rgba(223, 109, 2, 0.473);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(218, 100, 3, 0.993);
+    border: 1px solid rgba(35, 3, 218, 0.993);
     padding: 30px;
     border-radius: 12px;
     max-width: 600px;
