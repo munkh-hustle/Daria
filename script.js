@@ -1,121 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Mobile Menu Toggle
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    const dropdowns = document.querySelectorAll('.dropdown');
+function openModal(modalId) {
+    const template = document.getElementById(modalId);
+    const modalBody = document.getElementById('modal-body');
+    const overlay = document.getElementById('modal-overlay');
+    if (template && modalBody && overlay) {
+        modalBody.innerHTML = template.innerHTML;
+        overlay.style.display = 'flex';
+    }
+}
 
-    mobileBtn.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const icon = mobileBtn.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
+function closeModal() {
+    const overlay = document.getElementById('modal-overlay');
+    if (overlay) overlay.style.display = 'none';
+}
 
-    // Mobile Dropdown Toggle
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                dropdown.classList.toggle('active');
-            }
-        });
-    });
+window.onclick = function(event) {
+    const overlay = document.getElementById('modal-overlay');
+    if (event.target === overlay) closeModal();
+};
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navMenu.classList.remove('active');
-                mobileBtn.querySelector('i').classList.remove('fa-times');
-                mobileBtn.querySelector('i').classList.add('fa-bars');
-            }
-        });
-    });
-
-    // 2. Branch Tabs Functionality
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const branchContents = document.querySelectorAll('.branch-content');
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons and contents
-            tabBtns.forEach(b => b.classList.remove('active'));
-            branchContents.forEach(c => c.classList.remove('active'));
-
-            // Add active class to clicked button
-            btn.classList.add('active');
-
-            // Show corresponding content
-            const targetId = btn.getAttribute('data-tab');
-            document.getElementById(targetId).classList.add('active');
-        });
-    });
-
-    // 3. Scroll Reveal Animation
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        const elementVisible = 150;
-
-        revealElements.forEach((element) => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < windowHeight - elementVisible) {
-                element.classList.add('visible');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', revealOnScroll);
-    // Trigger once on load
-    revealOnScroll();
-
-    // 4. Active Navigation Link on Scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // 5. Smooth Scroll for Anchor Links (Fallback for older browsers)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-});
+function switchTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
