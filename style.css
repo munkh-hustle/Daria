@@ -304,3 +304,81 @@ footer {
     color: #ff6b00;
     text-decoration: none;
 }
+
+/* Demand Section Styles */
+.demand-section {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: #ffffff;
+    padding: 60px 0;
+}
+
+.demand-section .section-title {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    font-size: 1.05rem;
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+.demand-grid {
+    gap: 20px;
+}
+
+.demand-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.demand-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ff6b00;
+    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.2);
+}
+
+.demand-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 107, 0, 0.15);
+    color: #ff6b00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px auto;
+}
+
+.demand-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.demand-card p {
+    font-size: 0.9rem;
+    color: #d1d5db;
+    line-height: 1.5;
+}
+
+.btn-large {
+    padding: 14px 32px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
