@@ -21,7 +21,6 @@
                 <a href="#dormitory" class="nav-link">ДОТУУР БАЙР</a>
                 <a href="#locations" class="nav-link">САЛБАРЫН БАЙРШИЛ</a>
             </nav>
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
@@ -34,8 +33,8 @@
                 <h3>Үйл ажиллагааны чиглэл</h3>
                 <p>Мэргэжил олгох болон мэргэжил дээшлүүлэх сургалт</p>
                 <div class="hero-btns">
-                    <button class="btn btn-primary" onclick="openModal('goal-modal')">ЗОРИЛГО – Дэлгэрэнгүй</button>
-                    <button class="btn btn-outline" onclick="openModal('target-modal')">ЗОРИЛТ – Дэлгэрэнгүй</button>
+                    <button class="btn btn-primary" onclick="document.getElementById('modal-goal').showModal()">ЗОРИЛГО – Дэлгэрэнгүй</button>
+                    <button class="btn btn-outline" onclick="document.getElementById('modal-target').showModal()">ЗОРИЛТ – Дэлгэрэнгүй</button>
                 </div>
             </div>
         </div>
@@ -49,25 +48,25 @@
                     <div class="card-icon"><i class="fas fa-eye"></i></div>
                     <h3>Алсын хараа</h3>
                     <p>Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвараар тэргүүлэгч болох...</p>
-                    <button class="btn btn-sm" onclick="openModal('vision-modal')">Дэлгэрэнгүй</button>
+                    <button class="btn btn-sm" onclick="document.getElementById('modal-vision').showModal()">Дэлгэрэнгүй</button>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-bullseye"></i></div>
                     <h3>Эрхэм зорилго</h3>
                     <p>Практикт суурилсан чанартай сургалтаар чадварлаг ажилтнуудыг бэлтгэнэ...</p>
-                    <button class="btn btn-sm" onclick="openModal('mission-modal')">Дэлгэрэнгүй</button>
+                    <button class="btn btn-sm" onclick="document.getElementById('modal-mission').showModal()">Дэлгэрэнгүй</button>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-scroll"></i></div>
                     <h3>Бодлого</h3>
                     <p>Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн зах зээлийн эрэлтэд нийцсэн сургалт явуулах...</p>
-                    <button class="btn btn-sm" onclick="openModal('policy-modal')">Дэлгэрэнгүй</button>
+                    <button class="btn btn-sm" onclick="document.getElementById('modal-policy').showModal()">Дэлгэрэнгүй</button>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-gem"></i></div>
                     <h3>Үнэт зүйл</h3>
                     <p>Чанар, Мэргэжлийн ур чадвар, Хариуцлага, Хөгжил, Хүндлэл, Үр дүн...</p>
-                    <button class="btn btn-sm" onclick="openModal('values-modal')">Дэлгэрэнгүй</button>
+                    <button class="btn btn-sm" onclick="document.getElementById('modal-values').showModal()">Дэлгэрэнгүй</button>
                 </div>
             </div>
         </div>
@@ -166,23 +165,17 @@
     <section id="locations" class="section bg-alt">
         <div class="container">
             <h2 class="section-title">САЛБАРЫН БАЙРШИЛ</h2>
-            <div class="tab-buttons">
-                <button class="tab-btn active" onclick="switchTab('branch1')">САЛБАР 1</button>
-                <button class="tab-btn" onclick="switchTab('branch2')">САЛБАР 2</button>
-            </div>
-            <div id="branch1" class="tab-content active">
-                <div class="location-info">
+            <div class="grid grid-2">
+                <div class="card">
                     <h3>САЛБАР 1</h3>
                     <p><strong>Байршил:</strong> Баянгол дүүрэг, 18 хороо, 3, 4-р хороолол, Элбэг их дэлгүүрийн зүүн талд, Хаан банкны байрны 4–6 давхар.</p>
-                    <p><strong>Холбоо барих утас / Ажлын утас:</strong> <a href="tel:+97677005589" class="phone-link">+976 77 005589</a></p>
+                    <p><strong>Утас:</strong> <a href="tel:+97677005589" class="phone-link">+976 77 005589</a></p>
                     <p><strong>Ажлын цаг:</strong> Даваа – Баасан: 09:00 – 18:00 | Бямба: 10:00 – 16:00 | Ням: Амарна.</p>
                 </div>
-            </div>
-            <div id="branch2" class="tab-content">
-                <div class="location-info">
+                <div class="card">
                     <h3>САЛБАР 2</h3>
                     <p><strong>Байршил:</strong> Сүхбаатар дүүрэг, 8 хороо, Сонор плаза оффис үйлчилгээний төв, 5 давхар, 503 тоот.</p>
-                    <p><strong>Холбоо барих утас / Ажлын утас:</strong> <a href="tel:+97677755589" class="phone-link">+976 77 755589</a></p>
+                    <p><strong>Утас:</strong> <a href="tel:+97677755589" class="phone-link">+976 77 755589</a></p>
                     <p><strong>Ажлын цаг:</strong> Даваа – Баасан: 09:00 – 18:00 | Бямба: 10:00 – 16:00 | Ням: Амарна.</p>
                 </div>
             </div>
@@ -190,7 +183,7 @@
     </section>
 
     <footer>
-        <div class="container">
+        <div class="container" style="text-align: center;">
             <p><strong>UPDATE МЭРГЭЖИЛ СУРГАЛТЫН ТӨВ</strong></p>
             <p>“ХҮССЭН МЭРГЭЖЛЭЭ ЭЗЭМШЭЭД ХҮРЭХ ИРЭЭДҮЙГЭЭ БҮТЭЭ.”</p>
             <p>Салбар 1: <a href="tel:+97677005589" style="color:#ff6b00;">+976 77 005589</a> | Салбар 2: <a href="tel:+97677755589" style="color:#ff6b00;">+976 77 755589</a></p>
@@ -198,38 +191,42 @@
         </div>
     </footer>
 
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-card">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
-
-    <div id="goal-modal" class="modal-template">
+    <!-- POPUP MODALS (HTML native dialogs) -->
+    <dialog id="modal-goal" class="custom-dialog">
         <h2>ЗОРИЛГО</h2>
         <p>Мэргэжил эзэмшихийг хүсэгч хэн бүхэнд практикт суурилсан чанартай сургалтаар чадамж эзэмшүүлж, ажил олгогчдын хүлээлтэд нийцсэн чадварлаг ажилтныг бэлтгэн гаргах.</p>
-    </div>
-    <div id="target-modal" class="modal-template">
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-target" class="custom-dialog">
         <h2>ЗОРИЛТ</h2>
         <p>• Сургалтын чанарыг тасралтгүй сайжруулах<br>• Онол, практикийг хослуулсан сургалтыг хөгжүүлэх<br>• Хөдөлмөрийн зах зээлийн эрэлтэд нийцсэн мэргэжлээр чадварлаг ажилтан бэлтгэх</p>
-    </div>
-    <div id="vision-modal" class="modal-template">
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-vision" class="custom-dialog">
         <h2>Алсын хараа</h2>
         <p>Монголын мэргэжлийн боловсролын салбарт чанар, ур чадвар, шинэчлэлээр тэргүүлж, олон улсад хүлээн зөвшөөрөгдөх сургалтын орчныг бүрдүүлэгч жишиг төв болох.</p>
-    </div>
-    <div id="mission-modal" class="modal-template">
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-mission" class="custom-dialog">
         <h2>Эрхэм зорилго</h2>
         <p>Практикт суурилсан чанартай сургалтаар мэргэжлийн өндөр ур чадварыг эзэмшүүлж, өрсөлдөх чадамжтай чадварлаг ажилтныг бэлтгэнэ.</p>
-    </div>
-    <div id="policy-modal" class="modal-template">
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-policy" class="custom-dialog">
         <h2>Бодлого</h2>
         <p>Суралцагчийн хүсэлт, хэрэгцээг хүндэтгэн үзэж, чанартай сургалтыг мэргэжлийн түвшинд явуулж, төгсөгчдийг ажиллах, бизнес эрхлэх бодит чадвартай болгох.</p>
-    </div>
-    <div id="values-modal" class="modal-template">
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
+
+    <dialog id="modal-values" class="custom-dialog">
         <h2>Үнэт зүйл</h2>
         <p>Чанар, Мэргэжлийн ур чадвар, Хариуцлага, Хөгжил, Хүндлэл, Үр дүн.</p>
-    </div>
+        <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
+    </dialog>
 
-    <script src="script.js"></script>
 </body>
 </html>
