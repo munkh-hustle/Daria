@@ -102,61 +102,17 @@
                 <div class="course-card">
                     <div class="card-icon"><i class="fas fa-car"></i></div>
                     <h3>3. Авто жолоо</h3>
-                    <p>A ангилал, B ангилал, M ангилал.</p>
+                    <p>А ангилал, В ангилал, М ангилал.</p>
                     <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-3').showModal()">Дэлгэрэнгүй</button>
                 </div>
-                <<dialog id="course-4" class="custom-dialog sub-dialog">
-                    <h2>4. Компьютерийн сургалт</h2>
-                    <div class="sub-course-grid">
-                        
-                        <div class="sub-card">
-                            <h3>Оффис хэрэглээний программ</h3>
-                            <details class="duration-dropdown">
-                                <summary class="btn-time">Хугацаа харах</summary>
-                                <div class="duration-badges">
-                                    <span class="duration-box">7 хоног</span>
-                                    <span class="duration-box">14 хоног</span>
-                                    <span class="duration-box">21 хоног</span>
-                                </div>
-                            </details>
-                        </div>
-
-                        <div class="sub-card">
-                            <h3>Автокад</h3>
-                            <details class="duration-dropdown">
-                                <summary class="btn-time">Хугацаа харах</summary>
-                                <div class="duration-badges">
-                                    <span class="duration-box">7 хоног</span>
-                                    <span class="duration-box">14 хоног</span>
-                                </div>
-                            </details>
-                        </div>
-
-                        <div class="sub-card">
-                            <h3>Фотошоп</h3>
-                            <details class="duration-dropdown">
-                                <summary class="btn-time">Хугацаа харах</summary>
-                                <div class="duration-badges">
-                                    <span class="duration-box">7 хоног</span>
-                                    <span class="duration-box">14 хоног</span>
-                                </div>
-                            </details>
-                        </div>
-
-                        <div class="sub-card">
-                            <h3>Сошиал маркетинг</h3>
-                            <details class="duration-dropdown">
-                                <summary class="btn-time">Хугацаа харах</summary>
-                                <div class="duration-badges">
-                                    <span class="duration-box">7 хоног</span>
-                                    <span class="duration-box">14 хоног</span>
-                                </div>
-                            </details>
-                        </div>
-
-                    </div>
-                    <button class="btn btn-primary" style="margin-top: 15px;" onclick="this.closest('dialog').close()">Хаах</button>
-                </dialog>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>4. Компьютерийн сургалт</h3>
+                    <p>Оффис хэрэглээ, Автокад, Фотошоп, Сошиал маркетинг сургалтууд.</p>
+                    <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-4').showModal()">Дэлгэрэнгүй</button>
+                </div>
+                <div class="course-card">
+                    <div class="card-icon"><i class="fas fa-hard-hat"></i></div>
                     <h3>5. Уул уурхай & Эрчим хүч</h3>
                     <p>Хүнд машин механизмын операторч, засварчин, автын цахилгаан.</p>
                     <button class="btn btn-sm btn-primary" onclick="document.getElementById('course-5').showModal()">Дэлгэрэнгүй</button>
@@ -310,7 +266,7 @@
     <dialog id="course-3" class="custom-dialog">
         <h2>3. Авто жолоо</h2>
         <ul class="modal-list">
-            <li>A ангилал</li><li>B ангилал</li><li>M ангилал</li>
+            <li>А ангилал</li><li>В ангилал</li><li>М ангилал</li>
         </ul>
         <button class="btn btn-primary" onclick="this.closest('dialog').close()">Хаах</button>
     </dialog>
@@ -320,39 +276,54 @@
         <div class="sub-course-grid">
             <div class="sub-card">
                 <h3>Оффис хэрэглээний программ</h3>
-                <div class="duration-badges">
-                    <span class="duration-box">7 хоног</span>
-                    <span class="duration-box">14 хоног</span>
-                    <span class="duration-box">21 хоног</span>
-                </div>
+                <details class="duration-dropdown">
+                    <summary class="btn-time">Хугацаа</summary>
+                    <div class="duration-badges">
+                        <span class="duration-box">7 хоног</span>
+                        <span class="duration-box">14 хоног</span>
+                        <span class="duration-box">21 хоног</span>
+                    </div>
+                </details>
             </div>
+
             <div class="sub-card">
                 <h3>Автокад</h3>
-                <div class="duration-badges">
-                    <span class="duration-box">7 хоног</span>
-                    <span class="duration-box">14 хоног</span>
-                </div>
+                <details class="duration-dropdown">
+                    <summary class="btn-time">Хугацаа</summary>
+                    <div class="duration-badges">
+                        <span class="duration-box">7 хоног</span>
+                        <span class="duration-box">14 хоног</span>
+                    </div>
+                </details>
             </div>
+
             <div class="sub-card">
                 <h3>Фотошоп</h3>
-                <div class="duration-badges">
-                    <span class="duration-box">7 хоног</span>
-                    <span class="duration-box">14 хоног</span>
-                </div>
+                <details class="duration-dropdown">
+                    <summary class="btn-time">Хугацаа</summary>
+                    <div class="duration-badges">
+                        <span class="duration-box">7 хоног</span>
+                        <span class="duration-box">14 хоног</span>
+                    </div>
+                </details>
             </div>
+
             <div class="sub-card">
                 <h3>Сошиал маркетинг</h3>
-                <div class="duration-badges">
-                    <span class="duration-box">7 хоног</span>
-                    <span class="duration-box">14 хоног</span>
-                </div>
+                <details class="duration-dropdown">
+                    <summary class="btn-time">Хугацаа</summary>
+                    <div class="duration-badges">
+                        <span class="duration-box">7 хоног</span>
+                        <span class="duration-box">14 хоног</span>
+                    </div>
+                </details>
             </div>
         </div>
         <button class="btn btn-primary" style="margin-top: 15px;" onclick="this.closest('dialog').close()">Хаах</button>
     </dialog>
 
     <dialog id="course-5" class="custom-dialog">
-        <h2>5. Уул уурхайн эрчим хүч</h2>
+        <h2>5. Уул уурхай & Эрчим хүч</h2>
         <ul class="modal-list">
             <li>Хүнд машин механизмын операторч</li>
             <li>Хүнд машин механизмын засварчин</li>
