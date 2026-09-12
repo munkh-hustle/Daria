@@ -1,0 +1,44 @@
+/* Дэд сургалтын хайрцаг болон Border формат */
+.sub-dialog {
+    max-width: 600px;
+    width: 90%;
+}
+
+.sub-course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.sub-card {
+    border: 2px solid #0056b3;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.sub-card h3 {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.duration-badges {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.duration-box {
+    border: 1.5px solid #ff6b00;
+    color: #ff6b00;
+    background-color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
