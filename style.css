@@ -6,10 +6,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Background өнгөнүүдийг жигдчлэн цэвэрхэн болгосон */
 body {
-    background-color: #2059e7;
-    color: #f6fafd;
+    background-color: #111827;
+    color: #f3f4f6;
     line-height: 1.6;
 }
 
@@ -25,11 +24,11 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #f4f8fd;
+    background-color: #1f2937;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
@@ -40,25 +39,25 @@ body {
 }
 
 .logo {
-    color: #fdfdfd;
+    color: #ffffff;
     font-weight: 800;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-decoration: none;
 }
 
 .logo-accent {
-    color: #db5b00;
+    color: #ff6b00;
 }
 
 .nav-menu {
     display: flex;
-    gap: 12px;
+    gap: 15px;
 }
 
 .nav-link {
-    color: #cbd5e1;
+    color: #d1d5db;
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 600;
     transition: color 0.3s;
 }
@@ -67,22 +66,21 @@ body {
     color: #ff6b00;
 }
 
-/* Sections - Жигдссэн Сүүдэр болон Орчин үеийн өнгө */
+/* Sections */
 .section {
     padding: 70px 0;
 }
 
 .bg-alt {
-    background-color: #19058d;
+    background-color: #1f2937;
 }
 
 .section-title {
     text-align: center;
-    font-size: 1.9rem;
-    color: #181bdf;
-    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
     position: relative;
-    font-weight: 700;
 }
 
 .section-title::after {
@@ -96,39 +94,39 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80');
+    background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
-    padding: 90px 0;
+    padding: 100px 0;
     text-align: center;
 }
 
 .badge {
-    background: #fffefe;
-    color: rgb(3, 9, 104);
-    padding: 6px 16px;
+    background: #ff6b00;
+    color: white;
+    padding: 5px 15px;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: bold;
     display: inline-block;
     margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    color: #94a3b8;
+    font-size: 1.2rem;
+    color: #9ca3af;
     margin-bottom: 30px;
 }
 
 .glass-card {
-    background: rgba(223, 109, 2, 0.473);
+    background: rgba(31, 41, 55, 0.7);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(35, 3, 218, 0.993);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 12px;
     max-width: 600px;
@@ -142,47 +140,6 @@ body {
     margin-top: 20px;
 }
 
-/* Certificate Banner Section */
-.cert-banner-section {
-    padding: 40px 0;
-}
-
-.cert-card-banner {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border: 2px solid #ff6b00;
-    border-radius: 16px;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    box-shadow: 0 10px 25px rgba(255, 107, 0, 0.15);
-}
-
-.cert-icon-wrapper {
-    font-size: 3.5rem;
-    color: #ff6b00;
-    background: rgba(255, 107, 0, 0.1);
-    padding: 20px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 90px;
-    height: 90px;
-}
-
-.cert-text-wrapper h2 {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-}
-
-.cert-text-wrapper p {
-    color: #cbd5e1;
-    font-size: 1.05rem;
-    line-height: 1.5;
-}
-
 /* Grid System */
 .grid {
     display: grid;
@@ -194,39 +151,39 @@ body {
 .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
 /* Cards General */
-.card, .feature-card, .dorm-card, .placeholder-card {
-    background: hsl(214, 26%, 95%);
-    border: 1px solid #0a5ed4;
-    border-radius: 12px;
+.card, .feature-card, .dorm-card {
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 10px;
     padding: 25px;
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.card:hover, .feature-card:hover, .placeholder-card:hover {
-    border-color: #ff6b00;
-    transform: translateY(-5px);
-}
-
-.card-icon, .feature-icon, .placeholder-icon {
+.card-icon, .feature-icon {
     font-size: 2.5rem;
     color: #ff6b00;
     margin-bottom: 15px;
 }
 
 /* Demand Jobs Section */
+.demand-section {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: #ffffff;
+    padding: 60px 0;
+}
+
 .section-subtitle {
     text-align: center;
     max-width: 800px;
-    margin: -10px auto 35px auto;
-    font-size: 0.95rem;
-    color: #94a3b8;
+    margin: 0 auto 40px auto;
+    font-size: 1.05rem;
+    color: #9ca3af;
     line-height: 1.6;
 }
 
 .demand-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
@@ -235,7 +192,7 @@ body {
 
 .demand-card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     border-color: #ff6b00;
 }
 
@@ -252,30 +209,30 @@ body {
     margin: 0 auto 20px auto;
 }
 
-/* Course Cards */
+/* Course Cards Fix - Dark Background with White Text */
 .course-card {
-    background: #ffffff;
-    border: 1px solid #334155;
-    border-radius: 12px;
+    background: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 10px;
     padding: 25px;
     text-align: center;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .course-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-50px);
     border-color: #ff6b00;
 }
 
 .course-card h3 {
-    color: #2007fa;
-    font-size: 1.2rem;
+    color: #ffffff;
+    font-size: 1.25rem;
     margin-bottom: 12px;
 }
 
 .course-card p {
-    color: #cbd5e1;
-    font-size: 0.9rem;
+    color: #d1d5db;
+    font-size: 0.95rem;
     margin-bottom: 20px;
 }
 
@@ -318,25 +275,27 @@ body {
 
 .btn-large {
     padding: 14px 32px;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     border-radius: 30px;
 }
 
+/* Phone & Links */
 .phone-link {
     color: #ff6b00;
     text-decoration: none;
     font-weight: bold;
 }
 
+/* Dormitory Icons */
 .dorm-img-placeholder {
-    height: 90px;
-    background: #0f172a;
+    height: 100px;
+    background: #374151;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     color: #ff6b00;
     margin-bottom: 15px;
 }
@@ -346,15 +305,15 @@ body {
     margin: auto;
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid #334155;
-    background: #1e293b;
+    border: 1px solid #374151;
+    background: #1f2937;
     color: #ffffff;
     max-width: 600px;
     width: 90%;
 }
 
 .custom-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .sub-dialog {
@@ -369,22 +328,26 @@ body {
 }
 
 .sub-card {
-    background: #0f172a;
+    background: #111827;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #334155;
+    border: 1px solid #374151;
 }
 
 .sub-card h3 {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 10px;
     color: #ffffff;
 }
 
+.duration-dropdown summary {
+    list-style: none;
+}
+
 .btn-time {
-    background: #1e293b;
+    background: #374151;
     color: #ff6b00;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 4px;
     font-size: 0.8rem;
     cursor: pointer;
@@ -408,9 +371,9 @@ body {
 }
 
 footer {
-    background: #f1f5fd;
+    background: #111827;
     padding: 40px 0;
-    border-top: 1px solid #e74809;
-    color: #64748b;
-    font-size: 0.85rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+    font-size: 0.9rem;
 }
