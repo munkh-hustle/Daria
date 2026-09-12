@@ -8,8 +8,8 @@
 
 /* Background өнгөнүүдийг жигдчлэн цэвэрхэн болгосон */
 body {
-    background-color: #0f172a;
-    color: #f8fafc;
+    background-color: #d1d5df;
+    color: #157de6;
     line-height: 1.6;
 }
 
@@ -25,7 +25,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #1e293b;
+    background-color: #003488;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -40,14 +40,14 @@ body {
 }
 
 .logo {
-    color: #ffffff;
+    color: #fdfdfd;
     font-weight: 800;
     font-size: 1.1rem;
     text-decoration: none;
 }
 
 .logo-accent {
-    color: #ff6b00;
+    color: #db5b00;
 }
 
 .nav-menu {
@@ -73,7 +73,7 @@ body {
 }
 
 .bg-alt {
-    background-color: #1e293b;
+    background-color: #19058d;
 }
 
 .section-title {
@@ -126,9 +126,9 @@ body {
 }
 
 .glass-card {
-    background: rgba(30, 41, 59, 0.8);
+    background: rgba(2, 86, 223, 0.8);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(218, 100, 3, 0.993);
     padding: 30px;
     border-radius: 12px;
     max-width: 600px;
@@ -408,9 +408,9 @@ body {
 }
 
 footer {
-    background: #090d16;
+    background: #f1f5fd;
     padding: 40px 0;
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid #e74809;
     color: #64748b;
     font-size: 0.85rem;
 }
